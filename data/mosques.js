@@ -1264,6 +1264,549 @@ const MOSQUES_DATA = [
     boardMembers: [
       { name: "Imam Idris Watts", title: "Imam" }
     ]
+  },
+
+  // ── TEXAS — Houston Metro (Harris County) ─────────────────
+  {
+    id: 132, code: "TX-059", name: "Islamic Dawah Center of Houston",
+    names: { ar: "مركز الدعوة الإسلامية في هيوستن", ur: "اسلامک دعوہ سینٹر آف ہیوسٹن", es: "Centro de Da'wa Islámica de Houston" },
+    city: "Houston", cityId: 19, county: "Harris", countyId: 17, state: "TX", stateId: 44,
+    locationUrl: "https://maps.google.com/?q=202+Main+St+Houston+TX+77002",
+    websiteUrl: "https://www.islamicdawahouse.org", latitude: 29.7556, longitude: -95.3686,
+    boardMembers: [
+      { name: "Imam Yusuf Kavakci", title: "Imam" },
+      { name: "Br. Suhail Siddiqui", title: "Director" }
+    ]
+  },
+  {
+    id: 133, code: "TX-060", name: "Madina Masjid",
+    names: { ar: "مسجد المدينة", ur: "مدینہ مسجد", es: "Mezquita Madina" },
+    city: "Houston", cityId: 19, county: "Harris", countyId: 17, state: "TX", stateId: 44,
+    locationUrl: "https://maps.google.com/?q=6550+Tarnef+Dr+Houston+TX+77074",
+    websiteUrl: "https://www.madinamasjid.com", latitude: 29.6892, longitude: -95.5327,
+    boardMembers: [
+      { name: "Imam Zia-ul-Haq Qasmi", title: "Imam" },
+      { name: "Br. Shahid Khan", title: "President" }
+    ]
+  },
+  {
+    id: 134, code: "TX-061", name: "Masjid El-Farouq",
+    names: { ar: "مسجد الفاروق", ur: "مسجد الفاروق", es: "Mezquita El-Farouq" },
+    city: "Houston", cityId: 19, county: "Harris", countyId: 17, state: "TX", stateId: 44,
+    locationUrl: "https://maps.google.com/?q=1207+Conrad+Sauer+Dr+Houston+TX+77043",
+    websiteUrl: "https://www.elfarouq.org", latitude: 29.7831, longitude: -95.5560,
+    boardMembers: [
+      { name: "Imam Abdulrahman Al-Sudais", title: "Imam" },
+      { name: "Br. Tariq Farouk", title: "Chairman" }
+    ]
+  },
+  {
+    id: 135, code: "TX-062", name: "Masjid Bilal — Adel Road Islamic Center",
+    names: { ar: "مسجد بلال — مركز أديل رود الإسلامي", ur: "مسجد بلال — ایڈل روڈ اسلامک سینٹر", es: "Mezquita Bilal — Centro Islámico de Adel Road" },
+    city: "Houston", cityId: 19, county: "Harris", countyId: 17, state: "TX", stateId: 44,
+    locationUrl: "https://maps.google.com/?q=11815+Adel+Rd+Houston+TX+77067",
+    websiteUrl: "https://www.masjidbilalnz.org", latitude: 29.9447, longitude: -95.5185,
+    boardMembers: [
+      { name: "Imam Siraj Islam", title: "Imam" },
+      { name: "Br. Bilal Chaudhry", title: "President" }
+    ]
+  },
+  {
+    id: 136, code: "TX-063", name: "ISGH River Oaks Islamic Center",
+    names: { ar: "مركز ريفر أوكس الإسلامي (ISGH)", ur: "ISGH ریور اوکس اسلامک سینٹر", es: "Centro Islámico River Oaks (ISGH)" },
+    city: "Houston", cityId: 19, county: "Harris", countyId: 17, state: "TX", stateId: 44,
+    locationUrl: "https://maps.google.com/?q=3110+Eastside+St+Houston+TX+77098",
+    websiteUrl: "https://www.isgh.org", latitude: 29.7362, longitude: -95.3945,
+    boardMembers: [
+      { name: "Imam Wissam Abdul-Baki", title: "Imam" },
+      { name: "Br. Asim Hafiz", title: "President" }
+    ]
+  },
+  {
+    id: 137, code: "TX-064", name: "Al Muhajireen Islamic Cultural Center",
+    names: { ar: "مركز المهاجرين الثقافي الإسلامي", ur: "المہاجرین اسلامک کلچرل سینٹر", es: "Centro Cultural Islámico Al Muhajireen" },
+    city: "Houston", cityId: 19, county: "Harris", countyId: 17, state: "TX", stateId: 44,
+    locationUrl: "https://maps.google.com/?q=Al+Muhajireen+ICC+Houston+TX",
+    websiteUrl: "https://www.almuhajreen.org", latitude: 29.7020, longitude: -95.4950,
+    boardMembers: [
+      { name: "Imam Ahmad Al-Rashid", title: "Imam" },
+      { name: "Sr. Maryam Khalil", title: "Secretary" }
+    ]
+  },
+  {
+    id: 138, code: "TX-065", name: "Masjid Al-Shareef",
+    names: { ar: "مسجد الشريف", ur: "مسجد الشریف", es: "Mezquita Al-Shareef" },
+    city: "Houston", cityId: 19, county: "Harris", countyId: 17, state: "TX", stateId: 44,
+    locationUrl: "https://maps.google.com/?q=7428+Lindencrest+St+Houston+TX+77061",
+    websiteUrl: "", latitude: 29.6670, longitude: -95.3289,
+    boardMembers: [
+      { name: "Imam Abdulkarim Hassan", title: "Imam" }
+    ]
+  },
+  {
+    id: 139, code: "TX-066", name: "Champion Masjid",
+    names: { ar: "مسجد تشامبيون", ur: "چیمپئن مسجد", es: "Mezquita Champion" },
+    city: "Spring", cityId: 105, county: "Harris", countyId: 17, state: "TX", stateId: 44,
+    locationUrl: "https://maps.google.com/?q=16700+Old+Louetta+Rd+Spring+TX+77379",
+    websiteUrl: "", latitude: 30.0219, longitude: -95.5141,
+    boardMembers: [
+      { name: "Imam Khalid Hussain", title: "Imam" },
+      { name: "Br. Imran Khan", title: "President" }
+    ]
+  },
+  {
+    id: 140, code: "TX-067", name: "Baytown Islamic Center",
+    names: { ar: "المركز الإسلامي في بيتاون", ur: "بیٹاؤن اسلامک سینٹر", es: "Centro Islámico de Baytown" },
+    city: "Baytown", cityId: 106, county: "Harris", countyId: 17, state: "TX", stateId: 44,
+    locationUrl: "https://maps.google.com/?q=4000+Emmett+Hutto+Blvd+Baytown+TX+77521",
+    websiteUrl: "https://www.baytownmasjid.org", latitude: 29.7355, longitude: -94.9774,
+    boardMembers: [
+      { name: "Imam Sulayman Abdullah", title: "Imam" },
+      { name: "Br. Faisal Al-Amin", title: "Director" }
+    ]
+  },
+  {
+    id: 141, code: "TX-068", name: "Pearland Islamic Center",
+    names: { ar: "المركز الإسلامي في بيرلاند", ur: "پیرلینڈ اسلامک سینٹر", es: "Centro Islámico de Pearland" },
+    city: "Pearland", cityId: 107, county: "Brazoria", countyId: 77, state: "TX", stateId: 44,
+    locationUrl: "https://maps.google.com/?q=1530+Garden+Rd+Pearland+TX+77581",
+    websiteUrl: "https://www.pearlandicenter.org", latitude: 29.5500, longitude: -95.2898,
+    boardMembers: [
+      { name: "Imam Wahid Rana", title: "Imam" },
+      { name: "Dr. Saad Alfarhan", title: "President" },
+      { name: "Sr. Nadia Hassan", title: "Treasurer" }
+    ]
+  },
+  {
+    id: 142, code: "TX-069", name: "Katy Islamic Center (Masjid Aqsa)",
+    names: { ar: "مركز كاتي الإسلامي (مسجد الأقصى)", ur: "کیٹی اسلامک سینٹر (مسجد اقصیٰ)", es: "Centro Islámico de Katy (Masjid Aqsa)" },
+    city: "Katy", cityId: 108, county: "Fort Bend", countyId: 51, state: "TX", stateId: 44,
+    locationUrl: "https://maps.google.com/?q=2810+Saddlehorn+Trail+Katy+TX+77494",
+    websiteUrl: "https://www.katyislamiccenter.org", latitude: 29.7248, longitude: -95.8138,
+    boardMembers: [
+      { name: "Imam Ahsan Hanif", title: "Imam" },
+      { name: "Br. Rizwan Ahmed", title: "Chairman" },
+      { name: "Sr. Hina Shah", title: "Secretary" }
+    ]
+  },
+  {
+    id: 143, code: "TX-070", name: "Masjid At-Taqwa — Synott Islamic Center",
+    names: { ar: "مسجد التقوى — مركز سينوت الإسلامي", ur: "مسجد التقویٰ — سنوٹ اسلامک سینٹر", es: "Mezquita At-Taqwa — Centro Islámico Synott" },
+    city: "Sugar Land", cityId: 55, county: "Fort Bend", countyId: 51, state: "TX", stateId: 44,
+    locationUrl: "https://maps.google.com/?q=10415+Synott+Rd+Sugar+Land+TX+77478",
+    websiteUrl: "https://www.synottislamiccenter.org", latitude: 29.6142, longitude: -95.6632,
+    boardMembers: [
+      { name: "Imam Omar Farooq", title: "Imam" },
+      { name: "Dr. Zafar Iqbal", title: "President" }
+    ]
+  },
+
+  // ── TEXAS — Austin Metro ─────────────────────────────────
+  {
+    id: 144, code: "TX-071", name: "North Austin Muslim Community Center (Masjid Ayesha)",
+    names: { ar: "مركز مسلمي شمال أوستن (مسجد عائشة)", ur: "نارتھ آسٹن مسلم کمیونٹی سینٹر (مسجد عائشہ)", es: "Centro Comunitario Musulmán del Norte de Austin (Masjid Ayesha)" },
+    city: "Austin", cityId: 56, county: "Travis", countyId: 52, state: "TX", stateId: 44,
+    locationUrl: "https://maps.google.com/?q=11900+N+Lamar+Blvd+Austin+TX+78753",
+    websiteUrl: "https://www.namcc.org", latitude: 30.3838, longitude: -97.7118,
+    boardMembers: [
+      { name: "Imam Nabil Bayakly", title: "Imam" },
+      { name: "Br. Tariq Farouk", title: "President" }
+    ]
+  },
+  {
+    id: 145, code: "TX-072", name: "Islamic Center of Greater Austin (Masjid Khadijah)",
+    names: { ar: "المركز الإسلامي لمنطقة أوستن الكبرى (مسجد خديجة)", ur: "اسلامک سینٹر آف گریٹر آسٹن (مسجد خدیجہ)", es: "Centro Islámico del Gran Austin (Masjid Khadijah)" },
+    city: "Austin", cityId: 56, county: "Travis", countyId: 52, state: "TX", stateId: 44,
+    locationUrl: "https://maps.google.com/?q=5110+Manor+Rd+Austin+TX+78723",
+    websiteUrl: "https://www.austinmosque.org", latitude: 30.2784, longitude: -97.6933,
+    boardMembers: [
+      { name: "Imam Omar Shahin", title: "Imam" },
+      { name: "Dr. Khalid Shadeed", title: "President" },
+      { name: "Sr. Asma Khalil", title: "Secretary" }
+    ]
+  },
+  {
+    id: 146, code: "TX-073", name: "Islamic Center of Pflugerville",
+    names: { ar: "المركز الإسلامي في بفلوجرفيل", ur: "اسلامک سینٹر آف پفلوگروِل", es: "Centro Islámico de Pflugerville" },
+    city: "Pflugerville", cityId: 115, county: "Travis", countyId: 52, state: "TX", stateId: 44,
+    locationUrl: "https://maps.google.com/?q=920+W+Pflugerville+Pkwy+Pflugerville+TX+78660",
+    websiteUrl: "https://www.icptx.org", latitude: 30.4349, longitude: -97.6238,
+    boardMembers: [
+      { name: "Imam Yaseen Shaikh", title: "Imam" },
+      { name: "Br. Adnan Siddiqui", title: "Chairman" }
+    ]
+  },
+  {
+    id: 147, code: "TX-074", name: "Islamic Center of Lake Travis",
+    names: { ar: "المركز الإسلامي لبحيرة ترافيس", ur: "اسلامک سینٹر آف لیک ٹراوس", es: "Centro Islámico del Lago Travis" },
+    city: "Austin", cityId: 56, county: "Travis", countyId: 52, state: "TX", stateId: 44,
+    locationUrl: "https://maps.google.com/?q=4700+Doss+Rd+Austin+TX+78734",
+    websiteUrl: "https://www.iclaketravis.org", latitude: 30.3738, longitude: -97.9108,
+    boardMembers: [
+      { name: "Imam Bashir Umar", title: "Imam" }
+    ]
+  },
+  {
+    id: 148, code: "TX-075", name: "Masjid Ibrahim Austin",
+    names: { ar: "مسجد إبراهيم أوستن", ur: "مسجد ابراہیم آسٹن", es: "Mezquita Ibrahim Austin" },
+    city: "Austin", cityId: 56, county: "Travis", countyId: 52, state: "TX", stateId: 44,
+    locationUrl: "https://maps.google.com/?q=8521+W+TX-71+Austin+TX+78735",
+    websiteUrl: "https://www.masjidibrahim.org", latitude: 30.2332, longitude: -97.9025,
+    boardMembers: [
+      { name: "Imam Hamid Slimi", title: "Imam" },
+      { name: "Br. Hassan Mukhtar", title: "President" }
+    ]
+  },
+  {
+    id: 149, code: "TX-076", name: "East Austin Community of Al-Islam",
+    names: { ar: "مجتمع شرق أوستن للإسلام", ur: "ایسٹ آسٹن کمیونٹی آف الاسلام", es: "Comunidad Islámica del Este de Austin" },
+    city: "Austin", cityId: 56, county: "Travis", countyId: 52, state: "TX", stateId: 44,
+    locationUrl: "https://maps.google.com/?q=3701+E+MLK+Jr+Blvd+Austin+TX+78721",
+    websiteUrl: "https://www.eacislam.org", latitude: 30.2712, longitude: -97.6993,
+    boardMembers: [
+      { name: "Imam Luqman Ahmad", title: "Imam" }
+    ]
+  },
+  {
+    id: 150, code: "TX-077", name: "Masjid Al-Noor — Manor",
+    names: { ar: "مسجد النور — مانور", ur: "مسجد النور — مینر", es: "Mezquita Al-Noor — Manor" },
+    city: "Manor", cityId: 114, county: "Travis", countyId: 52, state: "TX", stateId: 44,
+    locationUrl: "https://maps.google.com/?q=1300+Old+Hwy+20+Manor+TX+78653",
+    websiteUrl: "https://www.alnoormcc.org", latitude: 30.3373, longitude: -97.5627,
+    boardMembers: [
+      { name: "Imam Hasan Rashid", title: "Imam" },
+      { name: "Br. Tariq Bilal", title: "Director" }
+    ]
+  },
+  {
+    id: 151, code: "TX-078", name: "Islamic Center of Brushy Creek (ICBC)",
+    names: { ar: "المركز الإسلامي في براشي كريك", ur: "اسلامک سینٹر آف براشی کریک", es: "Centro Islámico de Brushy Creek" },
+    city: "Cedar Park", cityId: 109, county: "Williamson", countyId: 78, state: "TX", stateId: 44,
+    locationUrl: "https://maps.google.com/?q=1950+Brushy+Creek+Rd+Cedar+Park+TX+78613",
+    websiteUrl: "https://www.icbrushycreek.org", latitude: 30.5138, longitude: -97.7829,
+    boardMembers: [
+      { name: "Imam Khalid Hossain", title: "Imam" },
+      { name: "Dr. Irfan Malik", title: "President" },
+      { name: "Br. Zubair Ahmed", title: "Treasurer" }
+    ]
+  },
+  {
+    id: 152, code: "TX-079", name: "Islamic Center of Round Rock",
+    names: { ar: "المركز الإسلامي في راوند روك", ur: "اسلامک سینٹر آف راؤنڈ راک", es: "Centro Islámico de Round Rock" },
+    city: "Round Rock", cityId: 110, county: "Williamson", countyId: 78, state: "TX", stateId: 44,
+    locationUrl: "https://maps.google.com/?q=1951+Hampton+Ln+Round+Rock+TX+78664",
+    websiteUrl: "https://www.roundrockmasjid.org", latitude: 30.5253, longitude: -97.6667,
+    boardMembers: [
+      { name: "Imam Tariq Saleem", title: "Imam" },
+      { name: "Br. Salman Farsi", title: "Chairman" }
+    ]
+  },
+  {
+    id: 153, code: "TX-080", name: "Georgetown Islamic Center (Masjid Taqwa)",
+    names: { ar: "مركز جورجتاون الإسلامي (مسجد التقوى)", ur: "جارج ٹاؤن اسلامک سینٹر (مسجد التقویٰ)", es: "Centro Islámico de Georgetown (Masjid Taqwa)" },
+    city: "Georgetown", cityId: 111, county: "Williamson", countyId: 78, state: "TX", stateId: 44,
+    locationUrl: "https://maps.google.com/?q=7275+Co+Rd+110+Round+Rock+TX+78665",
+    websiteUrl: "https://www.gicmasjid.org", latitude: 30.6280, longitude: -97.6780,
+    boardMembers: [
+      { name: "Imam Yaser Barhomi", title: "Imam" },
+      { name: "Br. Mohamad Khalil", title: "President" }
+    ]
+  },
+  {
+    id: 154, code: "TX-081", name: "Quad City Islamic Center of North Austin",
+    names: { ar: "المركز الإسلامي لمدن شمال أوستن", ur: "کواڈ سٹی اسلامک سینٹر آف نارتھ آسٹن", es: "Centro Islámico Quad City del Norte de Austin" },
+    city: "Leander", cityId: 112, county: "Williamson", countyId: 78, state: "TX", stateId: 44,
+    locationUrl: "https://maps.google.com/?q=17317+E+FM+1431+Leander+TX+78641",
+    websiteUrl: "https://www.qcicmasjid.org", latitude: 30.5883, longitude: -97.8528,
+    boardMembers: [
+      { name: "Imam Bilal Zafar", title: "Imam" }
+    ]
+  },
+  {
+    id: 155, code: "TX-082", name: "Islamic Center of Hays County (Masjid Bilal)",
+    names: { ar: "المركز الإسلامي في مقاطعة هايز (مسجد بلال)", ur: "اسلامک سینٹر آف ہیز کاؤنٹی (مسجد بلال)", es: "Centro Islámico del Condado de Hays (Masjid Bilal)" },
+    city: "Kyle", cityId: 113, county: "Hays", countyId: 79, state: "TX", stateId: 44,
+    locationUrl: "https://maps.google.com/?q=2400+Windy+Hill+Rd+Kyle+TX+78640",
+    websiteUrl: "https://www.alhudamcc.org", latitude: 29.9832, longitude: -97.8777,
+    boardMembers: [
+      { name: "Imam Usman Farooq", title: "Imam" },
+      { name: "Br. Shahid Baig", title: "Chairman" }
+    ]
+  },
+
+  // ── TEXAS — San Antonio (Bexar County) ────────────────────
+  {
+    id: 156, code: "TX-083", name: "Northside Islamic Center of San Antonio (NICSA)",
+    names: { ar: "مركز سان أنطونيو الإسلامي الشمالي", ur: "نارتھ سائیڈ اسلامک سینٹر آف سان انٹونیو", es: "Centro Islámico del Norte de San Antonio" },
+    city: "San Antonio", cityId: 82, county: "Bexar", countyId: 56, state: "TX", stateId: 44,
+    locationUrl: "https://maps.google.com/?q=Northside+Islamic+Center+San+Antonio+TX",
+    websiteUrl: "https://www.nicsatx.org", latitude: 29.5722, longitude: -98.5558,
+    boardMembers: [
+      { name: "Imam Farrukh Hasan", title: "Imam" },
+      { name: "Dr. Hisham Farouk", title: "President" }
+    ]
+  },
+  {
+    id: 157, code: "TX-084", name: "Muslim Center of San Antonio (MCSA)",
+    names: { ar: "مركز مسلمي سان أنطونيو", ur: "مسلم سینٹر آف سان انٹونیو", es: "Centro Musulmán de San Antonio" },
+    city: "San Antonio", cityId: 82, county: "Bexar", countyId: 56, state: "TX", stateId: 44,
+    locationUrl: "https://maps.google.com/?q=Muslim+Center+San+Antonio+TX",
+    websiteUrl: "https://www.mcsamasjid.com", latitude: 29.4742, longitude: -98.5500,
+    boardMembers: [
+      { name: "Imam Abdallah Idris Ali", title: "Imam" },
+      { name: "Br. Jamal Rasheed", title: "Director" }
+    ]
+  },
+  {
+    id: 158, code: "TX-085", name: "Masjid Al-Ikhlas San Antonio",
+    names: { ar: "مسجد الإخلاص سان أنطونيو", ur: "مسجد الاخلاص سان انٹونیو", es: "Mezquita Al-Ikhlas San Antonio" },
+    city: "San Antonio", cityId: 82, county: "Bexar", countyId: 56, state: "TX", stateId: 44,
+    locationUrl: "https://maps.google.com/?q=9323+Perrin+Beitel+San+Antonio+TX",
+    websiteUrl: "https://www.alikhlasmasjid.com", latitude: 29.5641, longitude: -98.3923,
+    boardMembers: [
+      { name: "Imam Mustafa Khattab", title: "Imam" },
+      { name: "Br. Amir Qureshi", title: "President" }
+    ]
+  },
+
+  // ── TEXAS — DFW (Additional) ─────────────────────────────
+  {
+    id: 159, code: "TX-086", name: "Masjid Ansar-Allah",
+    names: { ar: "مسجد أنصار الله", ur: "مسجد انصار اللہ", es: "Mezquita Ansar-Allah" },
+    city: "Dallas", cityId: 13, county: "Dallas", countyId: 19, state: "TX", stateId: 44,
+    locationUrl: "https://maps.google.com/?q=3455+Roberts+Ave+Dallas+TX+75215",
+    websiteUrl: "", latitude: 32.7569, longitude: -96.7731,
+    boardMembers: [
+      { name: "Imam Daud Salahuddin", title: "Imam" },
+      { name: "Br. Hassan Abdullah", title: "Chairman" }
+    ]
+  },
+  {
+    id: 160, code: "TX-087", name: "Islamic Association of Tarrant County",
+    names: { ar: "الجمعية الإسلامية لمقاطعة تارانت", ur: "اسلامک ایسوسی ایشن آف ٹیرنٹ کاؤنٹی", es: "Asociación Islámica del Condado de Tarrant" },
+    city: "Fort Worth", cityId: 68, county: "Tarrant", countyId: 54, state: "TX", stateId: 44,
+    locationUrl: "https://maps.google.com/?q=4901+Diaz+Ave+Fort+Worth+TX+76107",
+    websiteUrl: "https://www.iafw.org", latitude: 32.7326, longitude: -97.3774,
+    boardMembers: [
+      { name: "Imam Ibrahim Al-Badr", title: "Imam" },
+      { name: "Dr. Walid Hamdan", title: "President" },
+      { name: "Br. Samir Farhat", title: "Secretary" }
+    ]
+  },
+  {
+    id: 161, code: "TX-088", name: "Masjid Shakir Dawan",
+    names: { ar: "مسجد شاكر دوان", ur: "مسجد شاکر ڈاوان", es: "Mezquita Shakir Dawan" },
+    city: "Fort Worth", cityId: 68, county: "Tarrant", countyId: 54, state: "TX", stateId: 44,
+    locationUrl: "https://maps.google.com/?q=2605+Ennis+Ave+Fort+Worth+TX+76110",
+    websiteUrl: "", latitude: 32.7012, longitude: -97.3211,
+    boardMembers: [
+      { name: "Imam Shakir Dawan", title: "Imam" }
+    ]
+  },
+  {
+    id: 162, code: "TX-089", name: "Islamic Association of Fort Worth — Madinah Center",
+    names: { ar: "الجمعية الإسلامية لفورت وورث — مركز المدينة", ur: "اسلامک ایسوسی ایشن آف فورٹ ورتھ — مدینہ سینٹر", es: "Asociación Islámica de Fort Worth — Centro Madinah" },
+    city: "Watauga", cityId: 131, county: "Tarrant", countyId: 54, state: "TX", stateId: 44,
+    locationUrl: "https://maps.google.com/?q=6005+Chapman+Rd+Watauga+TX+76148",
+    websiteUrl: "https://www.iafw.org", latitude: 32.8548, longitude: -97.2549,
+    boardMembers: [
+      { name: "Imam Yahya Ibrahim", title: "Imam" },
+      { name: "Br. Ahmad Mansour", title: "President" }
+    ]
+  },
+  {
+    id: 163, code: "TX-090", name: "Masjid Hassan",
+    names: { ar: "مسجد حسن", ur: "مسجد حسن", es: "Mezquita Hassan" },
+    city: "Fort Worth", cityId: 68, county: "Tarrant", countyId: 54, state: "TX", stateId: 44,
+    locationUrl: "https://maps.google.com/?q=1201+E+Allen+St+Fort+Worth+TX+76104",
+    websiteUrl: "", latitude: 32.7498, longitude: -97.3069,
+    boardMembers: [
+      { name: "Imam Hassan Al-Amin", title: "Imam" }
+    ]
+  },
+  {
+    id: 164, code: "TX-091", name: "Momin Masjid",
+    names: { ar: "مسجد المؤمن", ur: "مومن مسجد", es: "Mezquita Momin" },
+    city: "Irving", cityId: 21, county: "Dallas", countyId: 19, state: "TX", stateId: 44,
+    locationUrl: "https://maps.google.com/?q=1019+Perry+Rd+Irving+TX+75061",
+    websiteUrl: "", latitude: 32.8340, longitude: -97.0082,
+    boardMembers: [
+      { name: "Imam Fazlur Rahman", title: "Imam" },
+      { name: "Br. Imran Qureshi", title: "President" }
+    ]
+  },
+  {
+    id: 165, code: "TX-092", name: "Islamic Center of Keller",
+    names: { ar: "المركز الإسلامي في كيلر", ur: "اسلامک سینٹر آف کیلر", es: "Centro Islámico de Keller" },
+    city: "Keller", cityId: 132, county: "Tarrant", countyId: 54, state: "TX", stateId: 44,
+    locationUrl: "https://maps.google.com/?q=Islamic+Center+Keller+TX",
+    websiteUrl: "", latitude: 32.9343, longitude: -97.2294,
+    boardMembers: [
+      { name: "Imam Aamir Sohail", title: "Imam" },
+      { name: "Br. Junaid Baig", title: "Director" }
+    ]
+  },
+  {
+    id: 166, code: "TX-093", name: "Masjid Al-Tawheed — Duncanville",
+    names: { ar: "مسجد التوحيد — دنكانفيل", ur: "مسجد التوحید — ڈنکن وِل", es: "Mezquita Al-Tawheed — Duncanville" },
+    city: "Duncanville", cityId: 80, county: "Dallas", countyId: 19, state: "TX", stateId: 44,
+    locationUrl: "https://maps.google.com/?q=1419+Acton+Ave+Duncanville+TX+75137",
+    websiteUrl: "", latitude: 32.6523, longitude: -96.9048,
+    boardMembers: [
+      { name: "Imam Rashid Al-Amin", title: "Imam" }
+    ]
+  },
+  {
+    id: 167, code: "TX-094", name: "Islamic Center of Rockwall",
+    names: { ar: "المركز الإسلامي في روكوول", ur: "اسلامک سینٹر آف راک وال", es: "Centro Islámico de Rockwall" },
+    city: "Rockwall", cityId: 129, county: "Rockwall", countyId: 92, state: "TX", stateId: 44,
+    locationUrl: "https://maps.google.com/?q=Islamic+Center+Rockwall+TX",
+    websiteUrl: "", latitude: 32.9290, longitude: -96.4597,
+    boardMembers: [
+      { name: "Imam Abdullah Hakim", title: "Imam" }
+    ]
+  },
+  {
+    id: 168, code: "TX-095", name: "Islamic Center of Waxahachie",
+    names: { ar: "المركز الإسلامي في واكساهاتشي", ur: "اسلامک سینٹر آف واکساہیچی", es: "Centro Islámico de Waxahachie" },
+    city: "Waxahachie", cityId: 130, county: "Ellis", countyId: 93, state: "TX", stateId: 44,
+    locationUrl: "https://maps.google.com/?q=Islamic+Center+Waxahachie+TX",
+    websiteUrl: "", latitude: 32.3888, longitude: -96.8489,
+    boardMembers: [
+      { name: "Imam Yusuf Saleem", title: "Imam" }
+    ]
+  },
+  {
+    id: 169, code: "TX-096", name: "Islamic Center of Burleson",
+    names: { ar: "المركز الإسلامي في بيرلسون", ur: "اسلامک سینٹر آف برلسن", es: "Centro Islámico de Burleson" },
+    city: "Burleson", cityId: 128, county: "Johnson", countyId: 91, state: "TX", stateId: 44,
+    locationUrl: "https://maps.google.com/?q=Islamic+Center+Burleson+TX",
+    websiteUrl: "", latitude: 32.5421, longitude: -97.3208,
+    boardMembers: [
+      { name: "Imam Faris Ghabra", title: "Imam" }
+    ]
+  },
+  {
+    id: 170, code: "TX-097", name: "Islamic Mosque of Texoma",
+    names: { ar: "مسجد تيكسوما الإسلامي", ur: "اسلامک مسجد آف ٹیکسوما", es: "Mezquita Islámica de Texoma" },
+    city: "Denison", cityId: 127, county: "Grayson", countyId: 90, state: "TX", stateId: 44,
+    locationUrl: "https://maps.google.com/?q=3601+Holly+Dr+Denison+TX+75020",
+    websiteUrl: "", latitude: 33.7557, longitude: -96.5362,
+    boardMembers: [
+      { name: "Imam Mukhtar Ali", title: "Imam" }
+    ]
+  },
+
+  // ── TEXAS — Other Major Cities ────────────────────────────
+  {
+    id: 171, code: "TX-098", name: "Islamic Community of Bryan-College Station (ICBCS)",
+    names: { ar: "مجتمع مسلمي برايان وكوليدج ستيشن الإسلامي", ur: "اسلامک کمیونٹی آف برایان کالج اسٹیشن", es: "Comunidad Islámica de Bryan-College Station" },
+    city: "College Station", cityId: 116, county: "Brazos", countyId: 80, state: "TX", stateId: 44,
+    locationUrl: "https://maps.google.com/?q=Islamic+Community+Bryan+College+Station+TX",
+    websiteUrl: "https://www.icbcs.org", latitude: 30.6280, longitude: -96.3344,
+    boardMembers: [
+      { name: "Imam Abdurrahman Mubarak", title: "Imam" },
+      { name: "Dr. Khalid Ibrahim", title: "President" },
+      { name: "Sr. Fatimah Yusuf", title: "Secretary" }
+    ]
+  },
+  {
+    id: 172, code: "TX-099", name: "Tyler Islamic Center",
+    names: { ar: "مركز تايلر الإسلامي", ur: "ٹائلر اسلامک سینٹر", es: "Centro Islámico de Tyler" },
+    city: "Tyler", cityId: 118, county: "Smith", countyId: 81, state: "TX", stateId: 44,
+    locationUrl: "https://maps.google.com/?q=Tyler+Islamic+Center+Tyler+TX",
+    websiteUrl: "https://www.tylerislamiccenter.org", latitude: 32.3513, longitude: -95.3011,
+    boardMembers: [
+      { name: "Imam Khalid Yasin", title: "Imam" },
+      { name: "Br. Riyad Mansour", title: "President" }
+    ]
+  },
+  {
+    id: 173, code: "TX-100", name: "Beaumont Mosque — Islamic Society of Triplex (IST)",
+    names: { ar: "مسجد بيومونت — الجمعية الإسلامية لتريبلكس", ur: "بیومنٹ مسجد — اسلامک سوسائٹی آف ٹرپلیکس", es: "Mezquita Beaumont — Sociedad Islámica de Triplex" },
+    city: "Beaumont", cityId: 119, county: "Jefferson", countyId: 82, state: "TX", stateId: 44,
+    locationUrl: "https://maps.google.com/?q=1270+W+Cardinal+Dr+Beaumont+TX+77705",
+    websiteUrl: "https://www.istweb.org", latitude: 30.0860, longitude: -94.1313,
+    boardMembers: [
+      { name: "Imam Muhammed Al-Amin", title: "Imam" },
+      { name: "Br. Yusuf Hasan", title: "Chairman" }
+    ]
+  },
+  {
+    id: 174, code: "TX-101", name: "Islamic Community of Greater Killeen",
+    names: { ar: "المجتمع الإسلامي لكيلين الكبرى", ur: "اسلامک کمیونٹی آف گریٹر کلین", es: "Comunidad Islámica del Gran Killeen" },
+    city: "Killeen", cityId: 120, county: "Bell", countyId: 83, state: "TX", stateId: 44,
+    locationUrl: "https://maps.google.com/?q=Islamic+Community+Killeen+TX",
+    websiteUrl: "", latitude: 31.1171, longitude: -97.7278,
+    boardMembers: [
+      { name: "Imam Mustafa Ali", title: "Imam" },
+      { name: "Br. Bilal Siddiq", title: "President" }
+    ]
+  },
+  {
+    id: 175, code: "TX-102", name: "Islamic Center of the South Plains (ICSP)",
+    names: { ar: "المركز الإسلامي للسهول الجنوبية", ur: "اسلامک سینٹر آف دی ساؤتھ پلینس", es: "Centro Islámico de las Llanuras del Sur" },
+    city: "Lubbock", cityId: 121, county: "Lubbock", countyId: 84, state: "TX", stateId: 44,
+    locationUrl: "https://maps.google.com/?q=Islamic+Center+South+Plains+Lubbock+TX",
+    websiteUrl: "https://www.lubbockmuslims.org", latitude: 33.5779, longitude: -101.8552,
+    boardMembers: [
+      { name: "Imam Faris Al-Rashid", title: "Imam" },
+      { name: "Dr. Bilal Mirza", title: "President" }
+    ]
+  },
+  {
+    id: 176, code: "TX-103", name: "Islamic Center of Amarillo (ICA)",
+    names: { ar: "المركز الإسلامي في أماريللو", ur: "اسلامک سینٹر آف امریلو", es: "Centro Islámico de Amarillo" },
+    city: "Amarillo", cityId: 122, county: "Potter", countyId: 85, state: "TX", stateId: 44,
+    locationUrl: "https://maps.google.com/?q=601+Quail+Creek+Dr+Amarillo+TX+79124",
+    websiteUrl: "https://www.amarillomosque.org", latitude: 35.2020, longitude: -101.8313,
+    boardMembers: [
+      { name: "Imam Sulaiman Khan", title: "Imam" },
+      { name: "Br. Hamza Saleh", title: "President" }
+    ]
+  },
+  {
+    id: 177, code: "TX-104", name: "McAllen Masjid — Islamic Society of South Texas",
+    names: { ar: "مسجد ماكالن — الجمعية الإسلامية لجنوب تكساس", ur: "میکالن مسجد — اسلامک سوسائٹی آف ساؤتھ ٹیکساس", es: "Mezquita McAllen — Sociedad Islámica del Sur de Texas" },
+    city: "McAllen", cityId: 123, county: "Hidalgo", countyId: 86, state: "TX", stateId: 44,
+    locationUrl: "https://maps.google.com/?q=2008+N+Ware+Rd+McAllen+TX+78501",
+    websiteUrl: "https://www.mcallenmasjid.com", latitude: 26.2034, longitude: -98.2300,
+    boardMembers: [
+      { name: "Imam Rafiq Sabir", title: "Imam" },
+      { name: "Br. Ahmad Khalil", title: "Chairman" }
+    ]
+  },
+  {
+    id: 178, code: "TX-105", name: "Islamic Center of Midland",
+    names: { ar: "المركز الإسلامي في ميدلاند", ur: "اسلامک سینٹر آف مڈلینڈ", es: "Centro Islámico de Midland" },
+    city: "Midland", cityId: 124, county: "Midland", countyId: 87, state: "TX", stateId: 44,
+    locationUrl: "https://maps.google.com/?q=Islamic+Center+Midland+TX",
+    websiteUrl: "https://www.islamiccentermidland.org", latitude: 31.9973, longitude: -102.0779,
+    boardMembers: [
+      { name: "Imam Basheer Saleem", title: "Imam" },
+      { name: "Dr. Omar Farouk", title: "President" }
+    ]
+  },
+  {
+    id: 179, code: "TX-106", name: "Islamic Society of Southern Texas — Masjid AbulQasim",
+    names: { ar: "الجمعية الإسلامية لجنوب تكساس — مسجد أبو القاسم", ur: "اسلامک سوسائٹی آف ساؤدرن ٹیکساس — مسجد ابوالقاسم", es: "Sociedad Islámica del Sur de Texas — Masjid AbulQasim" },
+    city: "Corpus Christi", cityId: 125, county: "Nueces", countyId: 88, state: "TX", stateId: 44,
+    locationUrl: "https://maps.google.com/?q=7341+McArdle+Rd+Corpus+Christi+TX+78412",
+    websiteUrl: "https://www.isstcc.org", latitude: 27.7172, longitude: -97.3964,
+    boardMembers: [
+      { name: "Imam Ibrahim Al-Asil", title: "Imam" },
+      { name: "Br. Dawud Rahman", title: "President" }
+    ]
+  },
+  {
+    id: 180, code: "TX-107", name: "Islamic Association of Wichita Falls",
+    names: { ar: "الجمعية الإسلامية في ويتشيتا فولز", ur: "اسلامک ایسوسی ایشن آف وچیٹا فالز", es: "Asociación Islámica de Wichita Falls" },
+    city: "Wichita Falls", cityId: 126, county: "Wichita", countyId: 89, state: "TX", stateId: 44,
+    locationUrl: "https://maps.google.com/?q=1701+Trigg+Ln+Wichita+Falls+TX+76306",
+    websiteUrl: "https://www.islamicsocietywf.org", latitude: 33.9137, longitude: -98.4935,
+    boardMembers: [
+      { name: "Imam Khalid Farouk", title: "Imam" }
+    ]
   }
 ];
 
@@ -1413,7 +1956,36 @@ const LOOKUP_CITIES = [
   { id: 101, code: "PIT", name: "Pittsburgh", names: { ar: "بيتسبرغ", ur: "پٹسبرگ", es: "Pittsburgh" } },
   { id: 102, code: "ALT", name: "Allentown", names: { ar: "ألينتاون", ur: "ایلن ٹاؤن", es: "Allentown" } },
   { id: 103, code: "HAR", name: "Harrisburg", names: { ar: "هاريسبرغ", ur: "ہیریسبرگ", es: "Harrisburg" } },
-  { id: 104, code: "RDG", name: "Reading", names: { ar: "ريدينغ", ur: "ریڈنگ", es: "Reading" } }
+  { id: 104, code: "RDG", name: "Reading", names: { ar: "ريدينغ", ur: "ریڈنگ", es: "Reading" } },
+  // ── Texas new city additions ──
+  { id: 105, code: "SPR", name: "Spring", names: { ar: "سبرينغ", ur: "سپرنگ", es: "Spring" } },
+  { id: 106, code: "BAY", name: "Baytown", names: { ar: "بيتاون", ur: "بیٹاؤن", es: "Baytown" } },
+  { id: 107, code: "PRL", name: "Pearland", names: { ar: "بيرلاند", ur: "پیرلینڈ", es: "Pearland" } },
+  { id: 108, code: "KTY", name: "Katy", names: { ar: "كاتي", ur: "کیٹی", es: "Katy" } },
+  { id: 109, code: "CDP", name: "Cedar Park", names: { ar: "سيدار بارك", ur: "سیڈر پارک", es: "Cedar Park" } },
+  { id: 110, code: "ROR", name: "Round Rock", names: { ar: "راوند روك", ur: "راؤنڈ راک", es: "Round Rock" } },
+  { id: 111, code: "GGT", name: "Georgetown", names: { ar: "جورجتاون", ur: "جارج ٹاؤن", es: "Georgetown" } },
+  { id: 112, code: "LEA", name: "Leander", names: { ar: "ليندر", ur: "لینڈر", es: "Leander" } },
+  { id: 113, code: "KYL", name: "Kyle", names: { ar: "كايل", ur: "کائل", es: "Kyle" } },
+  { id: 114, code: "MNR", name: "Manor", names: { ar: "مانور", ur: "مینر", es: "Manor" } },
+  { id: 115, code: "PFG", name: "Pflugerville", names: { ar: "بفلوجرفيل", ur: "پفلوگروِل", es: "Pflugerville" } },
+  { id: 116, code: "CST", name: "College Station", names: { ar: "كوليدج ستيشن", ur: "کالج اسٹیشن", es: "College Station" } },
+  { id: 117, code: "BRY", name: "Bryan", names: { ar: "برايان", ur: "برائن", es: "Bryan" } },
+  { id: 118, code: "TYL", name: "Tyler", names: { ar: "تايلر", ur: "ٹائلر", es: "Tyler" } },
+  { id: 119, code: "BMT", name: "Beaumont", names: { ar: "بيومونت", ur: "بیومنٹ", es: "Beaumont" } },
+  { id: 120, code: "KLN", name: "Killeen", names: { ar: "كيلين", ur: "کلین", es: "Killeen" } },
+  { id: 121, code: "LBK", name: "Lubbock", names: { ar: "لوباك", ur: "لبوک", es: "Lubbock" } },
+  { id: 122, code: "AMA", name: "Amarillo", names: { ar: "أماريللو", ur: "امریلو", es: "Amarillo" } },
+  { id: 123, code: "MCA", name: "McAllen", names: { ar: "ماكالن", ur: "میکالن", es: "McAllen" } },
+  { id: 124, code: "MDL", name: "Midland", names: { ar: "ميدلاند", ur: "مڈلینڈ", es: "Midland" } },
+  { id: 125, code: "CCI", name: "Corpus Christi", names: { ar: "كوربس كريستي", ur: "کارپس کرسٹی", es: "Corpus Christi" } },
+  { id: 126, code: "WFT", name: "Wichita Falls", names: { ar: "ويتشيتا فولز", ur: "وچیٹا فالز", es: "Wichita Falls" } },
+  { id: 127, code: "DNS", name: "Denison", names: { ar: "دينيسون", ur: "ڈینیسن", es: "Denison" } },
+  { id: 128, code: "BUR", name: "Burleson", names: { ar: "بيرلسون", ur: "برلسن", es: "Burleson" } },
+  { id: 129, code: "RKW", name: "Rockwall", names: { ar: "روكوول", ur: "راک وال", es: "Rockwall" } },
+  { id: 130, code: "WAX", name: "Waxahachie", names: { ar: "واكساهاتشي", ur: "واکساہیچی", es: "Waxahachie" } },
+  { id: 131, code: "WTG", name: "Watauga", names: { ar: "واتوغا", ur: "واٹوگا", es: "Watauga" } },
+  { id: 132, code: "KLR", name: "Keller", names: { ar: "كيلر", ur: "کیلر", es: "Keller" } }
 ];
 
 const LOOKUP_COUNTIES = [
@@ -1495,7 +2067,25 @@ const LOOKUP_COUNTIES = [
   { id: 73, code: "ALL", name: "Allegheny", names: { ar: "أليغيني", ur: "الیگینی", es: "Allegheny" } },
   { id: 74, code: "LEH", name: "Lehigh", names: { ar: "ليهاي", ur: "لیہائی", es: "Lehigh" } },
   { id: 75, code: "DAU", name: "Dauphin", names: { ar: "دوفين", ur: "ڈوفن", es: "Dauphin" } },
-  { id: 76, code: "BRK", name: "Berks", names: { ar: "بيركس", ur: "برکس", es: "Berks" } }
+  { id: 76, code: "BRK", name: "Berks", names: { ar: "بيركس", ur: "برکس", es: "Berks" } },
+  // ── Texas new county additions ──
+  { id: 77, code: "BRZ", name: "Brazoria", names: { ar: "برازوريا", ur: "بریزوریا", es: "Brazoria" } },
+  { id: 78, code: "WLM", name: "Williamson", names: { ar: "ويليامسون", ur: "ولیمسن", es: "Williamson" } },
+  { id: 79, code: "HYS", name: "Hays", names: { ar: "هايز", ur: "ہیز", es: "Hays" } },
+  { id: 80, code: "BRS", name: "Brazos", names: { ar: "برازوس", ur: "بریزوس", es: "Brazos" } },
+  { id: 81, code: "SMT", name: "Smith", names: { ar: "سميث", ur: "سمتھ", es: "Smith" } },
+  { id: 82, code: "JEF", name: "Jefferson", names: { ar: "جيفرسون", ur: "جیفرسن", es: "Jefferson" } },
+  { id: 83, code: "BEL", name: "Bell", names: { ar: "بيل", ur: "بیل", es: "Bell" } },
+  { id: 84, code: "LBK", name: "Lubbock", names: { ar: "لوباك", ur: "لبوک", es: "Lubbock" } },
+  { id: 85, code: "PTR", name: "Potter", names: { ar: "بوتر", ur: "پاٹر", es: "Potter" } },
+  { id: 86, code: "HDG", name: "Hidalgo", names: { ar: "هيدالغو", ur: "ہیڈالگو", es: "Hidalgo" } },
+  { id: 87, code: "MDC", name: "Midland", names: { ar: "ميدلاند", ur: "مڈلینڈ", es: "Midland" } },
+  { id: 88, code: "NCS", name: "Nueces", names: { ar: "نيوسيز", ur: "نیوسیز", es: "Nueces" } },
+  { id: 89, code: "WCH", name: "Wichita", names: { ar: "ويتشيتا", ur: "وچیٹا", es: "Wichita" } },
+  { id: 90, code: "GRY", name: "Grayson", names: { ar: "غريسون", ur: "گریسن", es: "Grayson" } },
+  { id: 91, code: "JHN", name: "Johnson", names: { ar: "جونسون", ur: "جانسن", es: "Johnson" } },
+  { id: 92, code: "RKL", name: "Rockwall", names: { ar: "روكوول", ur: "راک وال", es: "Rockwall" } },
+  { id: 93, code: "ELL", name: "Ellis", names: { ar: "إليس", ur: "ایلس", es: "Ellis" } }
 ];
 
 // ─────────────────────────────────────────────
