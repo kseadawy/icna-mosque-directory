@@ -633,6 +633,8 @@ function findNearMe() {
 // ── Stats ────────────────────────────────────────────────────
 function renderStatsView() {
     renderStateChart();
+    renderMemberBreakdown();
+    renderCoverageMetrics();
     updateStats();
 }
 
@@ -656,6 +658,183 @@ function renderStateChart() {
         `;
         chart.appendChild(row);
     });
+}
+
+function renderMemberBreakdown() {
+    const el = $('member-breakdown');
+    if (!el) return;
+    const data = state.data;
+    if (!data.length) { el.innerHTML = `<p class="stats-empty">${t('statsNoData')}</p>`; return; }
+
+    const total = data.length;
+    const totalMembers = data.reduce((s, m) => s + m.boardMembers.length, 0);
+    const avgMembers = total ? (totalMembers / total).toFixed(1) : '0';
+    const withMembers = data.filter(m => m.boardMembers.length > 0).length;
+
+    // Distribution buckets
+    const buckets = [
+        { label: '0 members', key: 0 },
+        { label: '1 member',  key: 1 },
+        { label: '2 members', key: 2 },
+        { label: '3 members', key: 3 },
+        { label: '4+ members', key: '4+' }
+    ];
+    const bucketCounts = { 0: 0, 1: 0, 2: 0, 3: 0, '4+': 0 };
+    data.forEach(m => {
+        const n = m.boardMembers.length;
+        if (n <= 3) bucketCounts[n]++;
+        else bucketCounts['4+']++;
+    });
+    const maxBucket = Math.max(...Object.values(bucketCounts), 1);
+
+    // Top 8 mosques by board member count
+    const top8 = [...data].sort((a, b) => b.boardMembers.length - a.boardMembers.length).slice(0, 8);
+    const maxTop = top8[0]?.boardMembers.length || 1;
+
+    // Top 5 most common titles
+    const titleCounts = {};
+    data.forEach(m => m.boardMembers.forEach(bm => {
+        const title = bm.title || 'Unknown';
+        titleCounts[title] = (titleCounts[title] || 0) + 1;
+    }));
+    const topTitles = Object.entries(titleCounts).sort((a, b) => b[1] - a[1]).slice(0, 5);
+
+    // Distribution bucket labels from translations
+    buckets[0].label = t('statDist0');
+    buckets[1].label = t('statDist1');
+    buckets[2].label = t('statDist2');
+    buckets[3].label = t('statDist3');
+    buckets[4].label = t('statDist4plus');
+
+    el.innerHTML = `
+        <div class="mb-summary">
+            <div class="mb-kpi">
+                <span class="mb-kpi-value">${totalMembers}</span>
+                <span class="mb-kpi-label">${t('statTotalMembers')}</span>
+            </div>
+            <div class="mb-kpi">
+                <span class="mb-kpi-value">${avgMembers}</span>
+                <span class="mb-kpi-label">${t('statAvgMosque')}</span>
+            </div>
+            <div class="mb-kpi">
+                <span class="mb-kpi-value">${withMembers}</span>
+                <span class="mb-kpi-label">${t('statMosquesListed')}</span>
+            </div>
+        </div>
+
+        <h4 class="breakdown-subtitle">${t('statMemberDist')}</h4>
+        <div class="dist-bars">
+            ${buckets.map(b => {
+                const count = bucketCounts[b.key];
+                const pct = Math.round((count / maxBucket) * 100);
+                const textPct = total ? Math.round((count / total) * 100) : 0;
+                return `
+                <div class="dist-row">
+                    <span class="dist-label">${b.label}</span>
+                    <div class="bar-track"><div class="bar-fill dist-bar" style="width:${pct}%">
+                        ${count > 0 ? `<span class="bar-count">${count}</span>` : ''}
+                    </div></div>
+                    <span class="dist-pct">${textPct}%</span>
+                </div>`;
+            }).join('')}
+        </div>
+
+        <h4 class="breakdown-subtitle">${t('statTopMosques')}</h4>
+        <div class="bar-chart">
+            ${top8.map(m => {
+                const pct = Math.round((m.boardMembers.length / maxTop) * 100);
+                const fullName = getMosqueName(m);
+                const shortName = fullName.length > 30 ? fullName.slice(0, 30) + '…' : fullName;
+                return `
+                <div class="bar-row">
+                    <span class="bar-label" title="${escHtml(fullName)}">${escHtml(shortName)}</span>
+                    <div class="bar-track"><div class="bar-fill" style="width:${pct}%">
+                        <span class="bar-count">${m.boardMembers.length}</span>
+                    </div></div>
+                </div>`;
+            }).join('')}
+        </div>
+
+        ${topTitles.length ? `
+        <h4 class="breakdown-subtitle">${t('statCommonTitles')}</h4>
+        <div class="title-pills">
+            ${topTitles.map(([title, count]) =>
+                `<span class="title-pill">${escHtml(title)}<strong>${count}</strong></span>`
+            ).join('')}
+        </div>` : ''}
+    `;
+}
+
+function renderCoverageMetrics() {
+    const el = $('coverage-metrics');
+    if (!el) return;
+    const data = state.data;
+    if (!data.length) { el.innerHTML = `<p class="stats-empty">${t('statsNoData')}</p>`; return; }
+
+    const total = data.length;
+    const withWebsite  = data.filter(m => m.websiteUrl && m.websiteUrl.trim()).length;
+    const withLocation = data.filter(m => m.locationUrl && m.locationUrl.trim()).length;
+    const withMembers  = data.filter(m => m.boardMembers.length > 0).length;
+    const withArName   = data.filter(m => m.names?.ar && m.names.ar.trim()).length;
+    const withUrName   = data.filter(m => m.names?.ur && m.names.ur.trim()).length;
+    const withEsName   = data.filter(m => m.names?.es && m.names.es.trim()).length;
+    const stateCount   = new Set(data.map(m => m.state)).size;
+    const cityCount    = new Set(data.map(m => m.city)).size;
+    const countyCount  = new Set(data.map(m => m.county)).size;
+
+    // Average members for mosques that have at least 1
+    const mosquesMembered = data.filter(m => m.boardMembers.length > 0);
+    const avgMembers = mosquesMembered.length
+        ? (mosquesMembered.reduce((s, m) => s + m.boardMembers.length, 0) / mosquesMembered.length).toFixed(1)
+        : '0';
+
+    const metrics = [
+        { labelKey: 'covWebsite',      value: withWebsite,  colorClass: 'cov-emerald' },
+        { labelKey: 'covMapLocation',  value: withLocation, colorClass: 'cov-gold'    },
+        { labelKey: 'covBoardMembers', value: withMembers,  colorClass: 'cov-blue'    },
+        { labelKey: 'covArName',       value: withArName,   colorClass: 'cov-gold'    },
+        { labelKey: 'covUrName',       value: withUrName,   colorClass: 'cov-emerald' },
+        { labelKey: 'covEsName',       value: withEsName,   colorClass: 'cov-blue'    }
+    ];
+
+    el.innerHTML = `
+        <div class="cov-summary">
+            <div class="cov-kpi">
+                <span class="cov-kpi-value">${stateCount}</span>
+                <span class="cov-kpi-label">${t('statStates')}</span>
+            </div>
+            <div class="cov-kpi">
+                <span class="cov-kpi-value">${cityCount}</span>
+                <span class="cov-kpi-label">${t('statCities')}</span>
+            </div>
+            <div class="cov-kpi">
+                <span class="cov-kpi-value">${countyCount}</span>
+                <span class="cov-kpi-label">${t('statCounties')}</span>
+            </div>
+            <div class="cov-kpi">
+                <span class="cov-kpi-value">${avgMembers}</span>
+                <span class="cov-kpi-label">${t('statAvgMembersNote')}</span>
+            </div>
+        </div>
+
+        <div class="cov-grid">
+            ${metrics.map(m => {
+                const pct = total ? Math.round((m.value / total) * 100) : 0;
+                return `
+                <div class="cov-item">
+                    <div class="cov-item-header">
+                        <span class="cov-label">${t(m.labelKey)}</span>
+                        <span class="cov-fraction">${m.value}/${total}</span>
+                    </div>
+                    <div class="cov-bar-track">
+                        <div class="cov-bar-fill ${m.colorClass}" style="width:${pct}%"></div>
+                    </div>
+                    <span class="cov-pct">${pct}%</span>
+                </div>`;
+            }).join('')}
+        </div>
+        <p class="cov-note">${t('covNote')}</p>
+    `;
 }
 
 function updateStats() {
@@ -1360,6 +1539,7 @@ function applyTranslations() {
     renderResultsBar();
     updateMapTileLayer(currentLang);
     if (state.currentView === 'admin') renderAdminView();
+    if (state.currentView === 'stats') renderStatsView();
 }
 
 function changeTheme(theme) {
