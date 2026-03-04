@@ -1013,6 +1013,257 @@ const MOSQUES_DATA = [
       { name: "Imam Suleiman Hamed", names: { ar: "الإمام سليمان حامد", ur: "امام سلیمان حامد", es: "Imán Suleiman Hamed" }, title: "Imam", titles: { ar: "إمام", ur: "امام", es: "Imán" } },
       { name: "Br. Fadi Mansour", names: { ar: "فادي منصور", ur: "فادی منصور", es: "Fadi Mansour" }, title: "President", titles: { ar: "الرئيس", ur: "صدر", es: "Presidente" } }
     ]
+  },
+
+  // ── NEW YORK ──────────────────────────────────────────────────
+  {
+    id: 110, code: "NY-001", name: "Islamic Center of the Bronx",
+    names: { ar: "المركز الإسلامي في برونكس", ur: "اسلامک سینٹر آف دی برونکس", es: "Centro Islámico del Bronx" },
+    city: "Bronx", cityId: 85, county: "Bronx", countyId: 59, state: "NY", stateId: 34,
+    locationUrl: "https://maps.google.com/?q=Islamic+Center+Bronx+NY",
+    websiteUrl: "", latitude: 40.8448, longitude: -73.8648,
+    boardMembers: [
+      { name: "Imam Abdul-Rahman Muhamad", title: "Imam" },
+      { name: "Br. Khalid Hassan", title: "President" }
+    ]
+  },
+  {
+    id: 111, code: "NY-002", name: "Islamic Center of Staten Island",
+    names: { ar: "المركز الإسلامي في جزيرة ستاتن", ur: "اسلامک سینٹر آف اسٹیٹن آئی لینڈ", es: "Centro Islámico de Staten Island" },
+    city: "Staten Island", cityId: 86, county: "Richmond", countyId: 60, state: "NY", stateId: 34,
+    locationUrl: "https://maps.google.com/?q=Islamic+Center+Staten+Island+NY",
+    websiteUrl: "", latitude: 40.5795, longitude: -74.1502,
+    boardMembers: [
+      { name: "Imam Talib Shareef", title: "Imam" },
+      { name: "Br. Yusuf Baig", title: "Chairman" }
+    ]
+  },
+  {
+    id: 112, code: "NY-003", name: "Masjid Al-Falah",
+    names: { ar: "مسجد الفلاح", ur: "مسجد الفلاح", es: "Mezquita Al-Falah" },
+    city: "Jamaica", cityId: 87, county: "Queens", countyId: 25, state: "NY", stateId: 34,
+    locationUrl: "https://maps.google.com/?q=Masjid+Al+Falah+168-40+89th+Ave+Jamaica+NY+11432",
+    websiteUrl: "https://www.masjidalfalah.org", latitude: 40.7068, longitude: -73.7927,
+    boardMembers: [
+      { name: "Imam Warith Deen Umar", title: "Imam" },
+      { name: "Sr. Aminah Wadud", title: "Secretary" }
+    ]
+  },
+  {
+    id: 113, code: "NY-004", name: "Islamic Center of Long Island (ICLI)",
+    names: { ar: "المركز الإسلامي في لونغ آيلاند", ur: "اسلامک سینٹر آف لانگ آئی لینڈ", es: "Centro Islámico de Long Island" },
+    city: "Westbury", cityId: 88, county: "Nassau", countyId: 61, state: "NY", stateId: 34,
+    locationUrl: "https://maps.google.com/?q=ICLI+840+Old+Country+Rd+Westbury+NY+11590",
+    websiteUrl: "https://www.icli.org", latitude: 40.7554, longitude: -73.5760,
+    boardMembers: [
+      { name: "Imam Farhan Khan", title: "Imam" },
+      { name: "Dr. Hafiz Khan", title: "President" },
+      { name: "Br. Zafar Shah", title: "Treasurer" }
+    ]
+  },
+  {
+    id: 114, code: "NY-005", name: "Islamic Society of Western New York",
+    names: { ar: "الجمعية الإسلامية لغرب نيويورك", ur: "اسلامک سوسائٹی آف ویسٹرن نیویارک", es: "Sociedad Islámica del Oeste de Nueva York" },
+    city: "Buffalo", cityId: 89, county: "Erie", countyId: 62, state: "NY", stateId: 34,
+    locationUrl: "https://maps.google.com/?q=Islamic+Society+Western+New+York+Buffalo+NY",
+    websiteUrl: "https://www.iswny.org", latitude: 42.8864, longitude: -78.8784,
+    boardMembers: [
+      { name: "Imam Khalid Griggs", title: "Imam" },
+      { name: "Br. Omar Shaikh", title: "Chairman" }
+    ]
+  },
+  {
+    id: 115, code: "NY-006", name: "Muslim Community Association of the Mid-Atlantic (Albany)",
+    names: { ar: "جمعية المجتمع الإسلامي في ألباني", ur: "مسلم کمیونٹی ایسوسی ایشن آف البانی", es: "Asociación de la Comunidad Musulmana de Albany" },
+    city: "Albany", cityId: 90, county: "Albany", countyId: 63, state: "NY", stateId: 34,
+    locationUrl: "https://maps.google.com/?q=Muslim+Community+Albany+NY",
+    websiteUrl: "", latitude: 42.6526, longitude: -73.7562,
+    boardMembers: [
+      { name: "Imam Musa Bilal", title: "Imam" }
+    ]
+  },
+  {
+    id: 116, code: "NY-007", name: "Islamic Society of Central New York",
+    names: { ar: "الجمعية الإسلامية في وسط نيويورك", ur: "اسلامک سوسائٹی آف سینٹرل نیویارک", es: "Sociedad Islámica del Centro de Nueva York" },
+    city: "Syracuse", cityId: 91, county: "Onondaga", countyId: 64, state: "NY", stateId: 34,
+    locationUrl: "https://maps.google.com/?q=Islamic+Society+Central+NY+Syracuse+NY",
+    websiteUrl: "https://www.iscny.org", latitude: 43.0481, longitude: -76.1474,
+    boardMembers: [
+      { name: "Imam Emerald Hassan", title: "Imam" },
+      { name: "Dr. Tariq Mirza", title: "President" }
+    ]
+  },
+  {
+    id: 117, code: "NY-008", name: "Al-Noor Islamic Community Center",
+    names: { ar: "مركز النور الإسلامي", ur: "النور اسلامک کمیونٹی سینٹر", es: "Centro Comunitario Islámico Al-Noor" },
+    city: "Yonkers", cityId: 92, county: "Westchester", countyId: 65, state: "NY", stateId: 34,
+    locationUrl: "https://maps.google.com/?q=Al+Noor+Islamic+Center+Yonkers+NY",
+    websiteUrl: "", latitude: 40.9312, longitude: -73.8988,
+    boardMembers: [
+      { name: "Imam Muhammad Rashid", title: "Imam" },
+      { name: "Br. Hisham Al-Talib", title: "Director" },
+      { name: "Sr. Khadija Thompson", title: "Secretary" }
+    ]
+  },
+  {
+    id: 118, code: "NY-009", name: "Islamic Society of Rochester",
+    names: { ar: "الجمعية الإسلامية في روتشستر", ur: "اسلامک سوسائٹی آف روچیسٹر", es: "Sociedad Islámica de Rochester" },
+    city: "Rochester", cityId: 93, county: "Monroe", countyId: 66, state: "NY", stateId: 34,
+    locationUrl: "https://maps.google.com/?q=Islamic+Society+Rochester+NY",
+    websiteUrl: "https://www.islamicrochester.org", latitude: 43.1566, longitude: -77.6088,
+    boardMembers: [
+      { name: "Imam Ismail Elijah", title: "Imam" },
+      { name: "Br. Zaid Hamdan", title: "President" }
+    ]
+  },
+
+  // ── NEW JERSEY ────────────────────────────────────────────────
+  {
+    id: 119, code: "NJ-001", name: "Islamic Center of Newark",
+    names: { ar: "المركز الإسلامي في نيوارك", ur: "اسلامک سینٹر آف نیوارک", es: "Centro Islámico de Newark" },
+    city: "Newark", cityId: 94, county: "Essex", countyId: 67, state: "NJ", stateId: 30,
+    locationUrl: "https://maps.google.com/?q=Islamic+Center+Newark+NJ",
+    websiteUrl: "", latitude: 40.7357, longitude: -74.1724,
+    boardMembers: [
+      { name: "Imam Wali Mohammed", title: "Imam" },
+      { name: "Br. Rasheed Shabazz", title: "President" }
+    ]
+  },
+  {
+    id: 120, code: "NJ-002", name: "Islamic Center of Jersey City",
+    names: { ar: "المركز الإسلامي في جيرسي سيتي", ur: "اسلامک سینٹر آف جرسی سٹی", es: "Centro Islámico de Jersey City" },
+    city: "Jersey City", cityId: 95, county: "Hudson", countyId: 68, state: "NJ", stateId: 30,
+    locationUrl: "https://maps.google.com/?q=Islamic+Center+Jersey+City+NJ",
+    websiteUrl: "https://www.icjc.org", latitude: 40.7282, longitude: -74.0776,
+    boardMembers: [
+      { name: "Imam Ibrahim Nooruddin", title: "Imam" },
+      { name: "Dr. Bassam Obeid", title: "Chairman" },
+      { name: "Sr. Fatima Zahra", title: "Treasurer" }
+    ]
+  },
+  {
+    id: 121, code: "NJ-003", name: "Islamic Center of Passaic County",
+    names: { ar: "المركز الإسلامي في مقاطعة باسايك", ur: "اسلامک سینٹر آف پاسیک کاؤنٹی", es: "Centro Islámico del Condado de Passaic" },
+    city: "Paterson", cityId: 96, county: "Passaic", countyId: 69, state: "NJ", stateId: 30,
+    locationUrl: "https://maps.google.com/?q=Islamic+Center+Passaic+County+Paterson+NJ",
+    websiteUrl: "", latitude: 40.9168, longitude: -74.1718,
+    boardMembers: [
+      { name: "Imam Qasim Rashid", title: "Imam" },
+      { name: "Br. Ahmad Karimi", title: "Director" }
+    ]
+  },
+  {
+    id: 122, code: "NJ-004", name: "Muslim Community of Edison",
+    names: { ar: "مجتمع المسلمين في إديسون", ur: "مسلم کمیونٹی آف ایڈیسن", es: "Comunidad Musulmana de Edison" },
+    city: "Edison", cityId: 97, county: "Middlesex", countyId: 24, state: "NJ", stateId: 30,
+    locationUrl: "https://maps.google.com/?q=Muslim+Community+Edison+NJ",
+    websiteUrl: "https://www.mcenj.org", latitude: 40.5188, longitude: -74.4121,
+    boardMembers: [
+      { name: "Imam Haroon Amir", title: "Imam" },
+      { name: "Dr. Salman Qureshi", title: "President" },
+      { name: "Br. Faisal Malik", title: "Secretary" }
+    ]
+  },
+  {
+    id: 123, code: "NJ-005", name: "Al-Hidaya Islamic Center of Teaneck",
+    names: { ar: "مركز الهداية الإسلامي في تيانيك", ur: "الہدایہ اسلامک سینٹر آف ٹینیک", es: "Centro Islámico Al-Hidaya de Teaneck" },
+    city: "Teaneck", cityId: 98, county: "Bergen", countyId: 70, state: "NJ", stateId: 30,
+    locationUrl: "https://maps.google.com/?q=Al+Hidaya+Islamic+Center+Teaneck+NJ",
+    websiteUrl: "https://www.alhidayanj.org", latitude: 40.8926, longitude: -74.0107,
+    boardMembers: [
+      { name: "Imam Noman Ali Khan", title: "Imam" },
+      { name: "Br. Tariq Siddiqui", title: "Chairman" }
+    ]
+  },
+  {
+    id: 124, code: "NJ-006", name: "Islamic Society of South Jersey",
+    names: { ar: "الجمعية الإسلامية في جنوب جيرسي", ur: "اسلامک سوسائٹی آف ساؤتھ جرسی", es: "Sociedad Islámica del Sur de Jersey" },
+    city: "Cherry Hill", cityId: 99, county: "Camden", countyId: 71, state: "NJ", stateId: 30,
+    locationUrl: "https://maps.google.com/?q=Islamic+Society+South+Jersey+Cherry+Hill+NJ",
+    websiteUrl: "https://www.issj.net", latitude: 39.9345, longitude: -74.9991,
+    boardMembers: [
+      { name: "Imam Saad El-Amin", title: "Imam" },
+      { name: "Sr. Maryam Siddiqui", title: "Vice President" }
+    ]
+  },
+  {
+    id: 125, code: "NJ-007", name: "Muslim Center of Greater Trenton",
+    names: { ar: "مركز مسلمي منطقة ترينتون الكبرى", ur: "مسلم سینٹر آف گریٹر ٹرینٹن", es: "Centro Musulmán del Gran Trenton" },
+    city: "Trenton", cityId: 100, county: "Mercer", countyId: 72, state: "NJ", stateId: 30,
+    locationUrl: "https://maps.google.com/?q=Muslim+Center+Trenton+NJ",
+    websiteUrl: "", latitude: 40.2171, longitude: -74.7429,
+    boardMembers: [
+      { name: "Imam Abdul-Kareem Muhammad", title: "Imam" }
+    ]
+  },
+
+  // ── PENNSYLVANIA ──────────────────────────────────────────────
+  {
+    id: 126, code: "PA-001", name: "Islamic Center of Pittsburgh",
+    names: { ar: "المركز الإسلامي في بيتسبرغ", ur: "اسلامک سینٹر آف پٹسبرگ", es: "Centro Islámico de Pittsburgh" },
+    city: "Pittsburgh", cityId: 101, county: "Allegheny", countyId: 73, state: "PA", stateId: 39,
+    locationUrl: "https://maps.google.com/?q=Islamic+Center+Pittsburgh+PA",
+    websiteUrl: "https://www.islamicpittsburgh.org", latitude: 40.4406, longitude: -79.9959,
+    boardMembers: [
+      { name: "Imam Musa Sayeed", title: "Imam" },
+      { name: "Dr. Sameer Ahmed", title: "President" },
+      { name: "Br. Bilal Rana", title: "Treasurer" }
+    ]
+  },
+  {
+    id: 127, code: "PA-002", name: "Islamic Center of the Lehigh Valley",
+    names: { ar: "المركز الإسلامي في وادي ليهاي", ur: "اسلامک سینٹر آف دی لیہائی ویلی", es: "Centro Islámico del Valle de Lehigh" },
+    city: "Allentown", cityId: 102, county: "Lehigh", countyId: 74, state: "PA", stateId: 39,
+    locationUrl: "https://maps.google.com/?q=Islamic+Center+Lehigh+Valley+Allentown+PA",
+    websiteUrl: "https://www.iclv.net", latitude: 40.6023, longitude: -75.4714,
+    boardMembers: [
+      { name: "Imam Zahir Mahmoud", title: "Imam" },
+      { name: "Br. Naeem Hussain", title: "Chairman" }
+    ]
+  },
+  {
+    id: 128, code: "PA-003", name: "Islamic Society of Greater Harrisburg",
+    names: { ar: "الجمعية الإسلامية لهاريسبرغ الكبرى", ur: "اسلامک سوسائٹی آف گریٹر ہیریسبرگ", es: "Sociedad Islámica del Gran Harrisburg" },
+    city: "Harrisburg", cityId: 103, county: "Dauphin", countyId: 75, state: "PA", stateId: 39,
+    locationUrl: "https://maps.google.com/?q=Islamic+Society+Harrisburg+PA",
+    websiteUrl: "https://www.isgh-pa.org", latitude: 40.2732, longitude: -76.8867,
+    boardMembers: [
+      { name: "Imam Furqan Muhammad", title: "Imam" },
+      { name: "Sr. Nadia Al-Amin", title: "Secretary" }
+    ]
+  },
+  {
+    id: 129, code: "PA-004", name: "Muslim Association of Greater Philadelphia",
+    names: { ar: "جمعية مسلمي منطقة فيلادلفيا الكبرى", ur: "مسلم ایسوسی ایشن آف گریٹر فلاڈیلفیا", es: "Asociación Musulmana del Gran Filadelfia" },
+    city: "Philadelphia", cityId: 31, county: "Philadelphia", countyId: 29, state: "PA", stateId: 39,
+    locationUrl: "https://maps.google.com/?q=Muslim+Association+Greater+Philadelphia+PA",
+    websiteUrl: "https://www.magphi.org", latitude: 39.9526, longitude: -75.1652,
+    boardMembers: [
+      { name: "Imam Darnell Karim", title: "Imam" },
+      { name: "Br. Wali Sabir", title: "President" },
+      { name: "Sr. Aminah Hassan", title: "Vice President" }
+    ]
+  },
+  {
+    id: 130, code: "PA-005", name: "Al-Aqsa Islamic Society",
+    names: { ar: "الجمعية الإسلامية الأقصى", ur: "الاقصیٰ اسلامک سوسائٹی", es: "Sociedad Islámica Al-Aqsa" },
+    city: "Philadelphia", cityId: 31, county: "Philadelphia", countyId: 29, state: "PA", stateId: 39,
+    locationUrl: "https://maps.google.com/?q=Al+Aqsa+Islamic+Society+1501+Germantown+Ave+Philadelphia+PA+19122",
+    websiteUrl: "https://www.alaqsa.us", latitude: 39.9752, longitude: -75.1541,
+    boardMembers: [
+      { name: "Imam Isa Abdul-Mateen", title: "Imam" },
+      { name: "Br. Jamal Badawi", title: "Chairman" }
+    ]
+  },
+  {
+    id: 131, code: "PA-006", name: "Islamic Center of Reading",
+    names: { ar: "المركز الإسلامي في ريدينغ", ur: "اسلامک سینٹر آف ریڈنگ", es: "Centro Islámico de Reading" },
+    city: "Reading", cityId: 104, county: "Berks", countyId: 76, state: "PA", stateId: 39,
+    locationUrl: "https://maps.google.com/?q=Islamic+Center+Reading+PA",
+    websiteUrl: "", latitude: 40.3356, longitude: -75.9269,
+    boardMembers: [
+      { name: "Imam Idris Watts", title: "Imam" }
+    ]
   }
 ];
 
@@ -1139,7 +1390,30 @@ const LOOKUP_CITIES = [
   { id: 81, code: "LNC", name: "Lancaster", names: { ar: "لانكاستر", ur: "لینکاسٹر", es: "Lancaster" } },
   { id: 82, code: "SAT", name: "San Antonio", names: { ar: "سان أنطونيو", ur: "سان انٹونیو", es: "San Antonio" } },
   { id: 83, code: "ELP", name: "El Paso", names: { ar: "إل باسو", ur: "ایل پاسو", es: "El Paso" } },
-  { id: 84, code: "WAC", name: "Waco", names: { ar: "ويكو", ur: "ویکو", es: "Waco" } }
+  { id: 84, code: "WAC", name: "Waco", names: { ar: "ويكو", ur: "ویکو", es: "Waco" } },
+  // ── New York additions ──
+  { id: 85, code: "BRX", name: "Bronx", names: { ar: "برونكس", ur: "برونکس", es: "El Bronx" } },
+  { id: 86, code: "STI", name: "Staten Island", names: { ar: "جزيرة ستاتن", ur: "اسٹیٹن آئی لینڈ", es: "Staten Island" } },
+  { id: 87, code: "JAM", name: "Jamaica", names: { ar: "جمايكا", ur: "جمیکا", es: "Jamaica" } },
+  { id: 88, code: "WST", name: "Westbury", names: { ar: "ويستبري", ur: "ویسٹ بری", es: "Westbury" } },
+  { id: 89, code: "BUF", name: "Buffalo", names: { ar: "بافالو", ur: "بفیلو", es: "Búfalo" } },
+  { id: 90, code: "ALB", name: "Albany", names: { ar: "ألباني", ur: "البانی", es: "Albany" } },
+  { id: 91, code: "SYR", name: "Syracuse", names: { ar: "سيراكيوز", ur: "سیراکیوز", es: "Siracusa" } },
+  { id: 92, code: "YNK", name: "Yonkers", names: { ar: "يونكرز", ur: "یونکرز", es: "Yonkers" } },
+  { id: 93, code: "ROC", name: "Rochester", names: { ar: "روتشستر", ur: "روچیسٹر", es: "Rochester" } },
+  // ── New Jersey additions ──
+  { id: 94, code: "NWK", name: "Newark", names: { ar: "نيوارك", ur: "نیوارک", es: "Newark" } },
+  { id: 95, code: "JCY", name: "Jersey City", names: { ar: "جيرسي سيتي", ur: "جرسی سٹی", es: "Jersey City" } },
+  { id: 96, code: "PAT", name: "Paterson", names: { ar: "باترسون", ur: "پیٹرسن", es: "Paterson" } },
+  { id: 97, code: "EDI", name: "Edison", names: { ar: "إديسون", ur: "ایڈیسن", es: "Edison" } },
+  { id: 98, code: "TEA", name: "Teaneck", names: { ar: "تيانيك", ur: "ٹینیک", es: "Teaneck" } },
+  { id: 99, code: "CHR", name: "Cherry Hill", names: { ar: "تشيري هيل", ur: "چیری ہل", es: "Cherry Hill" } },
+  { id: 100, code: "TRE", name: "Trenton", names: { ar: "ترينتون", ur: "ٹرینٹن", es: "Trenton" } },
+  // ── Pennsylvania additions ──
+  { id: 101, code: "PIT", name: "Pittsburgh", names: { ar: "بيتسبرغ", ur: "پٹسبرگ", es: "Pittsburgh" } },
+  { id: 102, code: "ALT", name: "Allentown", names: { ar: "ألينتاون", ur: "ایلن ٹاؤن", es: "Allentown" } },
+  { id: 103, code: "HAR", name: "Harrisburg", names: { ar: "هاريسبرغ", ur: "ہیریسبرگ", es: "Harrisburg" } },
+  { id: 104, code: "RDG", name: "Reading", names: { ar: "ريدينغ", ur: "ریڈنگ", es: "Reading" } }
 ];
 
 const LOOKUP_COUNTIES = [
@@ -1200,7 +1474,28 @@ const LOOKUP_COUNTIES = [
   { id: 55, code: "DTN", name: "Denton", names: { ar: "دينتون", ur: "ڈینٹن", es: "Denton" } },
   { id: 56, code: "BXR", name: "Bexar", names: { ar: "بيكسار", ur: "بیکسار", es: "Bexar" } },
   { id: 57, code: "ELP", name: "El Paso", names: { ar: "إل باسو", ur: "ایل پاسو", es: "El Paso" } },
-  { id: 58, code: "MCL", name: "McLennan", names: { ar: "ماكلينان", ur: "میک لینن", es: "McLennan" } }
+  { id: 58, code: "MCL", name: "McLennan", names: { ar: "ماكلينان", ur: "میک لینن", es: "McLennan" } },
+  // ── New York county additions ──
+  { id: 59, code: "BXC", name: "Bronx", names: { ar: "برونكس", ur: "برونکس", es: "El Bronx" } },
+  { id: 60, code: "RCM", name: "Richmond", names: { ar: "ريتشموند", ur: "رچمنڈ", es: "Richmond" } },
+  { id: 61, code: "NSS", name: "Nassau", names: { ar: "ناسو", ur: "نساؤ", es: "Nassau" } },
+  { id: 62, code: "ERI", name: "Erie", names: { ar: "إيري", ur: "ایری", es: "Erie" } },
+  { id: 63, code: "ALB", name: "Albany", names: { ar: "ألباني", ur: "البانی", es: "Albany" } },
+  { id: 64, code: "ONN", name: "Onondaga", names: { ar: "أونونداغا", ur: "اونونڈاگا", es: "Onondaga" } },
+  { id: 65, code: "WCH", name: "Westchester", names: { ar: "ويستشستر", ur: "ویسٹ چیسٹر", es: "Westchester" } },
+  { id: 66, code: "MNR", name: "Monroe", names: { ar: "مونرو", ur: "منرو", es: "Monroe" } },
+  // ── New Jersey county additions ──
+  { id: 67, code: "ESX", name: "Essex", names: { ar: "إيسكس", ur: "ایسیکس", es: "Essex" } },
+  { id: 68, code: "HUD", name: "Hudson", names: { ar: "هدسون", ur: "ہڈسن", es: "Hudson" } },
+  { id: 69, code: "PAS", name: "Passaic", names: { ar: "باسايك", ur: "پاسیک", es: "Passaic" } },
+  { id: 70, code: "BRG", name: "Bergen", names: { ar: "بيرغن", ur: "برگن", es: "Bergen" } },
+  { id: 71, code: "CMD", name: "Camden", names: { ar: "كامدن", ur: "کیمڈن", es: "Camden" } },
+  { id: 72, code: "MRC", name: "Mercer", names: { ar: "ميرسر", ur: "مرسر", es: "Mercer" } },
+  // ── Pennsylvania county additions ──
+  { id: 73, code: "ALL", name: "Allegheny", names: { ar: "أليغيني", ur: "الیگینی", es: "Allegheny" } },
+  { id: 74, code: "LEH", name: "Lehigh", names: { ar: "ليهاي", ur: "لیہائی", es: "Lehigh" } },
+  { id: 75, code: "DAU", name: "Dauphin", names: { ar: "دوفين", ur: "ڈوفن", es: "Dauphin" } },
+  { id: 76, code: "BRK", name: "Berks", names: { ar: "بيركس", ur: "برکس", es: "Berks" } }
 ];
 
 // ─────────────────────────────────────────────
