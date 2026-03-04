@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img" aria-label="ICNA Relief Logo">
+  <!-- Outer ring -->
+  <circle cx="50" cy="50" r="48" fill="#0e5c2e"/>
+  <circle cx="50" cy="50" r="47" fill="none" stroke="#fbbf24" stroke-width="2.5"/>
+
+  <!-- Crescent moon (white circle minus offset circle) -->
+  <circle cx="46" cy="44" r="21" fill="white"/>
+  <circle cx="52" cy="39" r="17" fill="#0e5c2e"/>
+
+  <!-- Five-pointed star (upper right) -->
+  <polygon points="79,22 81.2,29 88.5,29 82.9,33.4 85.1,40.4 79,36 72.9,40.4 75.1,33.4 69.5,29 76.8,29"
+           fill="white"/>
+
+  <!-- "ICNA" text at bottom -->
+  <text x="50" y="78" text-anchor="middle" font-family="Arial,sans-serif"
+        font-size="13" font-weight="700" letter-spacing="2" fill="#fbbf24">ICNA</text>
+  <text x="50" y="90" text-anchor="middle" font-family="Arial,sans-serif"
+        font-size="7.5" font-weight="600" letter-spacing="1.5" fill="white">RELIEF</text>
+</svg>

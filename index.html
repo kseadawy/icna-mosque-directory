@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="ICNA Mosque Directory — Browse, search, and filter mosques across the United States with detailed information including location, board members, and contact details." />
+
+  <!-- 🔐 Security Agent: Content Security Policy -->
+  <meta http-equiv="Content-Security-Policy"
+    content="default-src 'self'; script-src 'self' https://unpkg.com; style-src 'self' https://fonts.googleapis.com https://unpkg.com 'unsafe-inline'; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://*.tile.openstreetmap.org https://*.openstreetmap.org; connect-src 'self' https://unpkg.com; frame-src 'none'; object-src 'none';">
+
+  <title>ICNA Mosque Directory</title>
+  <link rel="icon" type="image/png" href="assets/icna_relief_icon.png" />
+  <link rel="stylesheet" href="styles.css" />
+
+  <!-- 🔐 SRI on all CDN assets -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css"
+    crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css"
+    crossorigin="anonymous" />
+</head>
+
+<body data-theme="dark-navy" data-lang="en">
+
+  <div class="app-wrapper">
+
+    <!-- ══════════════ HEADER ══════════════ -->
+    <header class="app-header" role="banner">
+      <div class="header-brand">
+        <!-- ICNA Relief Icon/Logo -->
+        <img src="assets/icna_relief_icon.png" alt="ICNA Relief Logo" class="app-logo" />
+        <div class="header-text">
+          <h1 id="txt-app-title">ICNA Mosque Directory</h1>
+          <p id="txt-app-subtitle">Islamic Circle of North America — Masjid Network</p>
+        </div>
+      </div>
+
+      <div class="header-right">
+        <!-- 🎨 FE Agent Sprint 4: Theme & Lang Selectors -->
+        <div class="settings-bar">
+          <div class="theme-selector">
+            <select id="theme-select" aria-label="Select Theme">
+              <option value="dark-navy" selected>🌙 Dark Navy &amp; Gold (Default)</option>
+              <option value="icna-relief">🟢 ICNA Relief (Green &amp; Gold)</option>
+              <option value="icna-green">🌿 ICNA Green &amp; Orange</option>
+              <option value="midnight-teal">🩵 Midnight Teal</option>
+              <option value="sand-dune">🏜 Desert Sand</option>
+              <option value="light">☀️ Classic Light</option>
+            </select>
+          </div>
+          <div class="lang-selector">
+            <button class="lang-btn active" data-lang="en">EN</button>
+            <button class="lang-btn" data-lang="ar">عربي</button>
+            <button class="lang-btn" data-lang="ur">اردو</button>
+            <button class="lang-btn" data-lang="es">ES</button>
+          </div>
+          <div id="auth-controls" class="auth-controls">
+            <button id="btn-login-open" class="btn btn-ghost">Login</button>
+            <div id="user-info" class="user-info hidden">
+              <span id="user-display"></span>
+              <button id="btn-logout" class="btn btn-ghost">Logout</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="header-stats" role="region" aria-label="Statistics">
+          <div class="stat-badge">
+            <div class="stat-value" id="stat-total">—</div>
+            <div class="stat-label" id="lbl-stat-mosques">Mosques</div>
+          </div>
+          <div class="stat-badge">
+            <div class="stat-value" id="stat-states">—</div>
+            <div class="stat-label" id="lbl-stat-states">States</div>
+          </div>
+          <div class="stat-badge">
+            <div class="stat-value" id="stat-members">—</div>
+            <div class="stat-label" id="lbl-stat-members">Board Members</div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- ══════════════ CONTROLS ══════════════ -->
+    <section class="controls-panel" aria-label="Search and filters">
+      <div class="controls-row">
+        <div class="control-group search-group">
+          <label for="search-input" id="lbl-search">Search</label>
+          <div class="search-wrapper">
+            <span class="search-icon" aria-hidden="true">🔍</span>
+            <input type="search" id="search-input" autocomplete="off"
+              placeholder="Search mosque name, city, county, state, or code…" aria-label="Search mosques" />
+          </div>
+        </div>
+
+        <div class="control-group">
+          <label for="filter-state" id="lbl-state">State</label>
+          <div class="select-wrapper">
+            <select id="filter-state" autocomplete="off" aria-label="Filter by state">
+              <option value="" id="opt-all-states">All States</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="control-group">
+          <label for="filter-city" id="lbl-city">City</label>
+          <div class="select-wrapper">
+            <select id="filter-city" autocomplete="off" aria-label="Filter by city">
+              <option value="" id="opt-all-cities">All Cities</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="control-group">
+          <label for="filter-county" id="lbl-county">County</label>
+          <div class="select-wrapper">
+            <select id="filter-county" autocomplete="off" aria-label="Filter by county">
+              <option value="" id="opt-all-counties">All Counties</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="control-group control-actions">
+          <label>&nbsp;</label>
+          <div class="btn-row">
+            <button id="btn-clear" class="btn btn-outline" aria-label="Clear all filters">✕ Clear</button>
+            <button id="btn-export" class="btn btn-primary" aria-label="Export to CSV">⬇ CSV</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 🎨 FE Agent Sprint 3: Board Member Search row -->
+      <div class="controls-row controls-row-2">
+        <div class="control-group search-group">
+          <label for="search-members" id="lbl-members">👥 Board Member</label>
+          <div class="search-wrapper">
+            <span class="search-icon" aria-hidden="true">🔍</span>
+            <input type="search" id="search-members" autocomplete="off"
+              placeholder="Search by board member name or title…" aria-label="Search board members" />
+          </div>
+        </div>
+        <div class="control-group" style="max-width:220px;">
+          <label for="filter-title" id="lbl-title">Title / Role</label>
+          <div class="select-wrapper">
+            <select id="filter-title" autocomplete="off" aria-label="Filter by board title">
+            </select>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ══════════════ VIEW TABS ══════════════ -->
+    <div class="view-tabs" role="tablist" aria-label="View mode">
+      <button id="tab-table" class="view-tab active" role="tab" aria-selected="true" aria-controls="view-table">☰
+        Table</button>
+      <button id="tab-map" class="view-tab" role="tab" aria-selected="false" aria-controls="view-map">🗺 Map</button>
+      <button id="tab-stats" class="view-tab" role="tab" aria-selected="false" aria-controls="view-stats">📊
+        Stats</button>
+      <button id="tab-admin" class="view-tab hidden" role="tab" aria-selected="false" aria-controls="view-admin">⚙
+        Admin</button>
+    </div>
+
+    <!-- ══════════════ RESULTS BAR ══════════════ -->
+    <div class="results-bar" role="status" aria-live="polite">
+      <div class="results-left">
+        <span class="results-info" id="results-info">Loading…</span>
+        <!-- 🗺️ Geo Agent — Mosques Near Me button -->
+        <button id="btn-near-me" class="btn btn-ghost btn-near" aria-label="Find mosques near my location">📍 Near
+          Me</button>
+      </div>
+      <div class="active-filters" id="active-filters" aria-label="Active filters"></div>
+    </div>
+
+    <!-- ══════════════ TABLE VIEW ══════════════ -->
+    <main id="view-table" role="tabpanel" aria-labelledby="tab-table">
+      <div class="table-container print-section" role="region" aria-label="Mosque directory table">
+        <div class="table-scroll">
+          <table aria-label="Mosque Directory">
+            <thead>
+              <tr>
+                <th data-col="code" scope="col"><span id="txt-col-code">Code</span> <span
+                    class="sort-indicator">↕</span></th>
+                <th data-col="name" scope="col"><span id="txt-col-name">Mosque Name</span> <span
+                    class="sort-indicator">↑</span></th>
+                <th data-col="city" scope="col"><span id="txt-col-city">City</span> <span
+                    class="sort-indicator">↕</span></th>
+                <th data-col="county" scope="col"><span id="txt-col-county">County</span> <span
+                    class="sort-indicator">↕</span></th>
+                <th data-col="state" scope="col"><span id="txt-col-state">State</span> <span
+                    class="sort-indicator">↕</span></th>
+                <th scope="col" id="txt-col-location">Location</th>
+                <th scope="col" id="txt-col-website">Website</th>
+                <th scope="col" style="width:48px;text-align:center;" class="no-print" id="txt-col-details">Details</th>
+              </tr>
+            </thead>
+            <tbody id="mosque-tbody">
+              <tr class="loading-row">
+                <td colspan="8">
+                  <div class="spinner"></div>Loading…
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="table-footer no-print">
+          <div class="per-page-select">
+            <span>Rows per page:</span>
+            <div class="select-wrapper">
+              <select id="per-page" aria-label="Rows per page">
+                <option value="10" selected>10</option>
+                <option value="25">25</option>
+                <option value="50">50</option>
+                <option value="100">100</option>
+              </select>
+            </div>
+          </div>
+          <div class="pagination-info" id="page-info" aria-live="polite"></div>
+          <nav class="pagination-controls" id="pagination-controls" aria-label="Page navigation"></nav>
+        </div>
+      </div>
+
+      <!-- 🎨 FE Agent — Print button -->
+      <div class="print-actions no-print">
+        <button id="btn-print-table" class="btn btn-ghost" aria-label="Print table">🖨 Print Table</button>
+      </div>
+    </main>
+
+    <!-- ══════════════ MAP VIEW ══════════════ -->
+    <div id="view-map" role="tabpanel" aria-labelledby="tab-map" style="display:none;">
+      <div class="map-container">
+        <div id="leaflet-map"></div>
+        <div class="map-legend">
+          <div class="legend-item"><span class="legend-dot dot-active"></span> Mosque</div>
+          <div class="legend-item"><span class="legend-dot dot-near"></span> Nearest</div>
+          <div class="legend-item"><span class="legend-dot dot-cluster"></span> Cluster</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══════════════ STATS VIEW (FE Agent) ══════════════ -->
+    <div id="view-stats" role="tabpanel" aria-labelledby="tab-stats" style="display:none;">
+      <div class="stats-grid">
+
+        <!-- Per-State Chart -->
+        <div class="stats-card stats-card-wide">
+          <h2 class="stats-title" id="txt-stats-states">📍 Mosques by State</h2>
+          <div class="chart-container">
+            <canvas id="chart-states" aria-label="Bar chart of mosque count per state"></canvas>
+          </div>
+        </div>
+
+        <!-- Board Members per mosque -->
+        <div class="stats-card">
+          <h2 class="stats-title" id="txt-stats-members">👥 Board Members per Mosque</h2>
+          <div id="member-breakdown" class="member-breakdown"></div>
+        </div>
+
+        <!-- Coverage metrics -->
+        <div class="stats-card">
+          <h2 class="stats-title" id="txt-stats-coverage">📋 Coverage Metrics</h2>
+          <div id="coverage-metrics" class="coverage-metrics"></div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ══════════════ ADMIN VIEW (Sprint 4) ══════════════ -->
+    <div id="view-admin" role="tabpanel" aria-labelledby="tab-admin" style="display:none;">
+      <div class="admin-panel">
+        <div id="admin-header">
+          <h2 id="txt-admin-title">Admin Panel</h2>
+        </div>
+        <!-- Admin sub-tab bar -->
+        <div class="admin-subtabs" role="tablist">
+          <button id="admin-tab-mosques" class="admin-subtab active" role="tab">🕌 Mosques</button>
+          <button id="admin-tab-members" class="admin-subtab" role="tab">👥 Board Members</button>
+          <button id="admin-tab-titles" class="admin-subtab" role="tab">🏷 Titles</button>
+          <button id="admin-tab-users" class="admin-subtab" role="tab" style="display:none;">👤 Users</button>
+        </div>
+
+        <div class="admin-content">
+          <!-- ── Mosques panel ── -->
+          <div id="admin-panel-mosques" class="admin-subpanel">
+            <div class="admin-toolbar">
+              <button id="btn-add-mosque" class="btn btn-primary">+ Add New Mosque</button>
+              <div class="admin-filters">
+                <div class="control-group">
+                  <input type="search" id="admin-search-input" placeholder="Search by name, code or city..."
+                    class="admin-search" />
+                </div>
+                <div class="control-group">
+                  <select id="admin-filter-state">
+                    <option value="">All States</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class="admin-table-wrapper">
+              <table id="admin-mosque-table">
+                <thead><tr>
+                  <th>Code</th><th>Name</th><th>Status</th><th>Actions</th>
+                </tr></thead>
+                <tbody id="admin-mosque-tbody"></tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- ── Board Members panel ── -->
+          <div id="admin-panel-members" class="admin-subpanel" style="display:none;">
+            <div class="admin-section-header">
+              <h3 id="txt-admin-members-tab">Board Members</h3>
+              <button id="btn-add-board-member" class="btn btn-primary btn-sm">+ Add Member</button>
+            </div>
+            <div class="admin-table-wrapper">
+              <table id="board-members-table">
+                <thead><tr>
+                  <th>Mosque</th><th>Name</th><th>Title</th><th>Actions</th>
+                </tr></thead>
+                <tbody id="board-members-tbody"></tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- ── Titles panel ── -->
+          <div id="admin-panel-titles" class="admin-subpanel" style="display:none;">
+            <div class="admin-section-header">
+              <h3 id="txt-titles-tab">Title Management</h3>
+              <button id="btn-add-title" class="btn btn-primary btn-sm">+ Add Title</button>
+            </div>
+            <div class="admin-table-wrapper">
+              <table id="titles-table">
+                <thead><tr>
+                  <th>Code</th><th>Title</th><th>Actions</th>
+                </tr></thead>
+                <tbody id="titles-tbody"></tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- ── Users panel (admin only) ── -->
+          <div id="admin-panel-users" class="admin-subpanel" style="display:none;">
+            <div class="admin-section-header">
+              <h3 id="txt-users-tab">User Management</h3>
+              <button id="btn-add-user" class="btn btn-primary btn-sm">+ Add User</button>
+            </div>
+            <div class="admin-table-wrapper">
+              <table id="users-table">
+                <thead><tr>
+                  <th>Username</th><th>Display Name</th><th>Role</th>
+                  <th>Email</th><th>Status</th><th>Actions</th>
+                </tr></thead>
+                <tbody id="users-tbody"></tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  </div><!-- /app-wrapper -->
+
+  <!-- ══════════════ DETAIL MODAL ══════════════ -->
+  <div id="modal-overlay" class="modal-overlay" style="display:none;" role="dialog" aria-modal="true"
+    aria-labelledby="modal-title">
+    <div class="modal" id="modal">
+      <div class="modal-header">
+        <h2 id="modal-title">Mosque Details</h2>
+        <button id="btn-modal-close" class="modal-close" aria-label="Close modal">✕</button>
+      </div>
+      <div class="modal-body" id="modal-body"></div>
+    </div>
+  </div>
+
+  </div>
+
+  <!-- ══════════════ MOSQUE FORM MODAL (Admin/Editor) ══════════════ -->
+  <div id="mosque-form-overlay" class="modal-overlay" style="display:none;" role="dialog" aria-modal="true">
+    <div class="modal modal-lg">
+      <div class="modal-header">
+        <h2 id="mosque-form-title">Add New Mosque</h2>
+        <button id="btn-mosque-form-close" class="modal-close">✕</button>
+      </div>
+      <div class="modal-body">
+        <form id="mosque-form" class="mosque-form">
+          <input type="hidden" id="form-mosque-id" />
+
+          <div class="form-grid">
+            <div class="control-group">
+              <label for="form-code">Mosque Code</label>
+              <input type="text" id="form-code" required placeholder="MSQ-XXX" />
+            </div>
+            <div class="control-group">
+              <label for="form-name">Name (English)</label>
+              <input type="text" id="form-name" required />
+            </div>
+            <div class="control-group">
+              <label for="form-name-ar">Name (Arabic)</label>
+              <input type="text" id="form-name-ar" dir="rtl" />
+            </div>
+            <div class="control-group">
+              <label for="form-name-ur">Name (Urdu)</label>
+              <input type="text" id="form-name-ur" dir="rtl" />
+            </div>
+            <div class="control-group">
+              <label for="form-name-es">Name (Spanish)</label>
+              <input type="text" id="form-name-es" />
+            </div>
+
+            <div class="control-group">
+              <label for="form-state">State</label>
+              <select id="form-state" required>
+                <option value="">Select State</option>
+              </select>
+            </div>
+            <div class="control-group">
+              <label for="form-city">City</label>
+              <input type="text" id="form-city" required />
+            </div>
+            <div class="control-group">
+              <label for="form-county">County</label>
+              <input type="text" id="form-county" required />
+            </div>
+
+            <div class="control-group">
+              <label for="form-lat">Latitude</label>
+              <input type="number" step="any" id="form-lat" required />
+            </div>
+            <div class="control-group">
+              <label for="form-lon">Longitude</label>
+              <input type="number" step="any" id="form-lon" required />
+            </div>
+
+            <div class="control-group full-width">
+              <label for="form-location">Google Maps URL</label>
+              <input type="url" id="form-location" placeholder="https://maps.google.com/..." />
+            </div>
+            <div class="control-group full-width">
+              <label for="form-website">Website URL</label>
+              <input type="url" id="form-website" placeholder="https://..." />
+            </div>
+          </div>
+
+          <div class="form-section">
+            <label>Board Members</label>
+            <div id="form-members-container" class="form-members-list"></div>
+            <button type="button" id="btn-add-member" class="btn btn-ghost">+ Add Member</button>
+          </div>
+
+          <div class="modal-footer">
+            <button type="button" id="btn-mosque-form-cancel" class="btn btn-outline">Cancel</button>
+            <button type="submit" class="btn btn-primary" id="btn-save-mosque">Save Mosque</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast -->
+  <!-- ══════════════ LOGIN MODAL (Sprint 4) ══════════════ -->
+  <div id="login-modal-overlay" class="modal-overlay" style="display:none;" role="dialog" aria-modal="true">
+    <div class="modal" style="max-width:400px;">
+      <div class="modal-header">
+        <h2 id="txt-login-title">Sign In</h2>
+        <button id="btn-login-close" class="modal-close" aria-label="Close modal">✕</button>
+      </div>
+      <div class="modal-body">
+        <div class="login-form">
+          <div class="control-group">
+            <label for="login-username" id="lbl-login-username">Username</label>
+            <input type="text" id="login-username" autocomplete="username" />
+          </div>
+          <div class="control-group">
+            <label for="login-password" id="lbl-login-password">Password</label>
+            <div class="password-input-wrapper">
+              <input type="password" id="login-password" autocomplete="current-password" />
+              <button type="button" id="btn-toggle-password" class="btn-password-toggle" aria-label="Show password">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
+                  <circle cx="12" cy="12" r="3" />
+                </svg>
+              </button>
+            </div>
+          </div>
+          <div id="login-error" class="error-text hidden"></div>
+          <button id="btn-login-submit" class="btn btn-primary w-full">Sign In</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════ USER FORM MODAL ══════════════ -->
+  <div id="user-form-overlay" class="modal-overlay" style="display:none;" role="dialog" aria-modal="true">
+    <div class="modal" style="max-width:500px;">
+      <div class="modal-header">
+        <h2 id="user-form-title">Add User</h2>
+        <button id="btn-user-form-close" class="modal-close">✕</button>
+      </div>
+      <div class="modal-body">
+        <form id="user-form">
+          <input type="hidden" id="form-user-id" />
+          <div class="form-grid">
+            <div class="control-group">
+              <label for="form-user-username">Username</label>
+              <input type="text" id="form-user-username" required autocomplete="off" />
+            </div>
+            <div class="control-group">
+              <label for="form-user-display">Display Name</label>
+              <input type="text" id="form-user-display" required />
+            </div>
+            <div class="control-group">
+              <label for="form-user-email">Email</label>
+              <input type="email" id="form-user-email" />
+            </div>
+            <div class="control-group">
+              <label for="form-user-role">Role</label>
+              <select id="form-user-role" required>
+                <option value="editor">Editor</option>
+                <option value="admin">Admin</option>
+              </select>
+            </div>
+            <div class="control-group">
+              <label for="form-user-password">Password <span id="lbl-pw-hint"
+                  style="font-weight:400;font-size:.8em;opacity:.7;">(leave blank to keep current)</span></label>
+              <input type="password" id="form-user-password" autocomplete="new-password" />
+            </div>
+            <div class="control-group">
+              <label for="form-user-active">Status</label>
+              <select id="form-user-active">
+                <option value="true">Active</option>
+                <option value="false">Inactive</option>
+              </select>
+            </div>
+          </div>
+          <div id="user-form-error" class="error-text hidden"></div>
+          <div class="modal-footer">
+            <button type="button" id="btn-user-form-cancel" class="btn btn-outline">Cancel</button>
+            <button type="submit" class="btn btn-primary">Save User</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════ BOARD MEMBER FORM MODAL ══════════════ -->
+  <div id="bm-form-overlay" class="modal-overlay" style="display:none;" role="dialog" aria-modal="true">
+    <div class="modal" style="max-width:560px;">
+      <div class="modal-header">
+        <h2 id="bm-form-heading">Add Board Member</h2>
+        <button id="btn-bm-form-close" class="modal-close">✕</button>
+      </div>
+      <div class="modal-body">
+        <form id="bm-form">
+          <input type="hidden" id="form-bm-mosque-id" />
+          <input type="hidden" id="form-bm-idx" value="-1" />
+          <div class="form-grid">
+            <div class="control-group full-width">
+              <label for="form-bm-mosque">Mosque *</label>
+              <select id="form-bm-mosque" required></select>
+            </div>
+            <div class="control-group">
+              <label for="form-bm-name">Name (EN) *</label>
+              <input type="text" id="form-bm-name" required placeholder="Full Name" />
+            </div>
+            <div class="control-group">
+              <label for="form-bm-title">Title</label>
+              <select id="form-bm-title" data-action="bm-title-autofill">
+                <option value="">— Select Title —</option>
+              </select>
+            </div>
+            <div class="control-group">
+              <label for="form-bm-name-ar">Name (AR)</label>
+              <input type="text" id="form-bm-name-ar" dir="rtl" placeholder="الاسم" />
+            </div>
+            <div class="control-group">
+              <label for="form-bm-title-ar">Title (AR)</label>
+              <input type="text" id="form-bm-title-ar" dir="rtl" placeholder="المنصب" readonly />
+            </div>
+            <div class="control-group">
+              <label for="form-bm-name-ur">Name (UR)</label>
+              <input type="text" id="form-bm-name-ur" dir="rtl" placeholder="نام" />
+            </div>
+            <div class="control-group">
+              <label for="form-bm-title-ur">Title (UR)</label>
+              <input type="text" id="form-bm-title-ur" dir="rtl" placeholder="عہدہ" readonly />
+            </div>
+            <div class="control-group">
+              <label for="form-bm-name-es">Name (ES)</label>
+              <input type="text" id="form-bm-name-es" placeholder="Nombre" />
+            </div>
+            <div class="control-group">
+              <label for="form-bm-title-es">Title (ES)</label>
+              <input type="text" id="form-bm-title-es" placeholder="Cargo" readonly />
+            </div>
+          </div>
+          <div id="bm-form-error" class="error-text hidden"></div>
+          <div class="modal-footer">
+            <button type="button" id="btn-bm-form-cancel" class="btn btn-outline">Cancel</button>
+            <button type="submit" class="btn btn-primary">Save Member</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════ TITLE FORM MODAL ══════════════ -->
+  <div id="title-form-overlay" class="modal-overlay" style="display:none;" role="dialog" aria-modal="true">
+    <div class="modal" style="max-width:520px;">
+      <div class="modal-header">
+        <h2 id="title-form-heading">Add Title</h2>
+        <button id="btn-title-form-close" class="modal-close">✕</button>
+      </div>
+      <div class="modal-body">
+        <form id="title-form">
+          <input type="hidden" id="form-title-id" />
+          <div class="form-grid">
+            <div class="control-group">
+              <label for="form-title-code">Code <span style="font-weight:400;font-size:.8em;opacity:.7;">(short, e.g.
+                  IMAM)</span></label>
+              <input type="text" id="form-title-code" maxlength="8" placeholder="IMAM" autocomplete="off" />
+            </div>
+            <div class="control-group">
+              <label for="form-title-en">English <span style="color:var(--clr-danger)">*</span></label>
+              <input type="text" id="form-title-en" required placeholder="e.g. Imam" />
+            </div>
+            <div class="control-group">
+              <label for="form-title-ar">Arabic (AR)</label>
+              <input type="text" id="form-title-ar" dir="rtl" placeholder="إمام" />
+            </div>
+            <div class="control-group">
+              <label for="form-title-ur">Urdu (UR)</label>
+              <input type="text" id="form-title-ur" dir="rtl" placeholder="امام" />
+            </div>
+            <div class="control-group full-width">
+              <label for="form-title-es">Spanish (ES)</label>
+              <input type="text" id="form-title-es" placeholder="Imán" />
+            </div>
+          </div>
+          <div id="title-form-error" class="error-text hidden"></div>
+          <div class="modal-footer">
+            <button type="button" id="btn-title-form-cancel" class="btn btn-outline">Cancel</button>
+            <button type="submit" class="btn btn-primary">Save Title</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div id="toast-container" class="toast-container" aria-live="assertive" aria-atomic="true"></div>
+
+  <!-- Scripts — 🔐 SRI enforced -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
+
+  <!-- Sprint 4 Modules -->
+  <script src="i18n/translations.js"></script>
+  <script src="auth/auth.js"></script>
+
+  <script src="data/mosques.js"></script>
+  <script src="app.js"></script>
+</body>
+
+</html>
